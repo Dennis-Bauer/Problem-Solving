@@ -14,9 +14,11 @@
   "author": "Dennis Bauer",
   "type": "commonjs",
   "scripts": {
-    "test": "vitest --reporter=verbose"
+    "test": "vitest --reporter=verbose",
+    "prepare": "husky"
   },
   "dependencies": {
+    "husky": "^9.1.7",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   }
