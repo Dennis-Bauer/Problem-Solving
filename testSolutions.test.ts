@@ -192,4 +192,8 @@ describe("Is it the same Upside Down?", () => {
   it("should return false for '96666660999999' -> '69999990666666'", () => {
     expect(sameUpsideDown("96666660999999")).toBe(false);
   });
+
+  it("should return false for '1234560' -> 'Wrong Input'", () => {
+    expect(sameUpsideDown("1234560")).toBe(false);
+  });
 })
