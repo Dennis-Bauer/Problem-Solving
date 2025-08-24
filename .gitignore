@@ -1,0 +1,5 @@
+# npm Modules
+/node_modules
+
+# Typescript
+/build
