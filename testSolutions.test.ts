@@ -1,4 +1,4 @@
-import { describe, it, expect, test } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import sudokuSolver from "./Problems/Sudoku-Solver/solver";
 
 // Test cases from Clash code (Sudoku-Solver Problem and Mini-sudoku-solver)
@@ -27,7 +27,7 @@ describe("Sudoku-Solver", () => {
     [3,5,1,8,6,9,7,2,4],
   ]
 
-  test("should return the correct solution (Hard 9x9)", () => {
+  it("should return the correct solution (Hard 9x9)", () => {
     expect(sudokuSolver(hard9Sudoku)).toEqual(hard9SudokuSolution);
   })
 
@@ -55,7 +55,7 @@ describe("Sudoku-Solver", () => {
     [7,9,6,3,1,8,4,5,2],
   ];
 
-  test("should return the correct solution (Ultra-Hard 9x9)", () => {
+  it("should return the correct solution (Ultra-Hard 9x9)", () => {
     expect(sudokuSolver(ultraHard9Sudoku)).toEqual(ultraHard9SudokuSolution);
   })
 
@@ -73,7 +73,7 @@ describe("Sudoku-Solver", () => {
     [1,2,4,3],
   ];
 
-  test("should return the correct solution (Hard 4x4)", () => {
+  it("should return the correct solution (Hard 4x4)", () => {
     expect(sudokuSolver(hard4Sudoku)).toEqual(hard4SudokuSolution);
   })
   
@@ -91,7 +91,7 @@ describe("Sudoku-Solver", () => {
     [4,2,1,3],
   ];
 
-  test("should return the correct solution (Ultra-Hard 4x4)", () => {
+  it("should return the correct solution (Ultra-Hard 4x4)", () => {
     expect(sudokuSolver(ultraHard4Sudoku)).toEqual(ultraHard4SudokuSolution);
   })
 
@@ -133,7 +133,7 @@ describe("Sudoku-Solver", () => {
     [12, 5, 4, 9, 15, 2, 11, 7, 13, 16, 1, 14, 8, 6, 10, 3]
 ];
 
-  test("should return the correct solution (Big Sudoku)", () => {
+  it("should return the correct solution (Big Sudoku)", () => {
     expect(sudokuSolver(bigSudoku)).toEqual(bigSudokuSolution);
   })
 
@@ -142,7 +142,7 @@ describe("Sudoku-Solver", () => {
     [1, 1, 1],
   ];
 
-  test("should return false (Wrong Input 1)", () => {
+  it("should return false (Wrong Input 1)", () => {
     expect(sudokuSolver(wrongSudoku1)).toBe(false);
   })
 
@@ -153,7 +153,7 @@ describe("Sudoku-Solver", () => {
     [4,0,1,0],
   ];
 
-  test("should return false (Wrong Input 2)", () => {
+  it("should return false (Wrong Input 2)", () => {
     expect(sudokuSolver(wrongSudoku2)).toBe(false);
   })
 
