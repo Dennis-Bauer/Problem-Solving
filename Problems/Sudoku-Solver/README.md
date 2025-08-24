@@ -26,4 +26,4 @@ using logic until the whole grid is complete.
 
 ### Solution Idea
 
-### Implementation
+### [Implementation](./solver.ts)
