@@ -21,3 +21,9 @@ The exact set of symbols depends on the grid size:
 
 No matter the size, the idea is the same: carefully place the symbols
 using logic until the whole grid is complete.
+
+## Documentation
+
+### Solution Idea
+
+### Implementation
