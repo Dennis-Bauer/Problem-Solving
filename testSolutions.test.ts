@@ -64,23 +64,23 @@ describe("Fibonacci-Sequence", () => {
     f.next();
     f.next();
 
-    expect(f.value).toEqual(1);
+    expect(f.getValue()).toEqual(1);
   })
 
   it("should contain the last generated number", () => {
     f.next(5);
 
-    expect(f.value).toEqual(13);
+    expect(f.getValue()).toEqual(13);
   });
 
   it("should return the generated sequence", () => {
-    expect(f.sequence).toEqual([0, 1, 1, 2, 3, 5, 8, 13]);
+    expect(f.getSequence()).toEqual([0, 1, 1, 2, 3, 5, 8, 13]);
   });
 
   it("should return the generated sequence", () => {
     f.next(40);
 
-    expect(f.sequence).toEqual([
+    expect(f.getSequence()).toEqual([
       0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 
       55, 89, 144, 233, 377, 610, 987, 1597, 
       2584, 4181, 6765, 10946, 17711, 28657, 

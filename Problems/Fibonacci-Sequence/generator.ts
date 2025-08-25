@@ -1,7 +1,8 @@
 export default class Fibonacci {
 
-  value: number = 0;
-  sequence: number[] = [];
+  private lastValue: number | null = null;
+  private value: number | null = null;
+  private sequence: number[] = [];
 
   constructor() {};
 
@@ -21,8 +22,37 @@ export default class Fibonacci {
     return numberTwo;
   }
 
-  next(n?: number) {
+  next(n: number = 1) {
 
+    if (this.value === null) {
+      this.value = 0;
+
+      this.sequence.push(0);
+      return;
+    }
+
+    if (this.lastValue === null) {
+      this.lastValue = this.value;
+      this.value = 1;
+
+      this.sequence.push(1);
+      return;
+    }
+
+    for (let i = 0; i < n; i++) {
+      let temp: number = this.value;
+      this.value = this.value + this.lastValue!;
+      this.lastValue = temp;
+
+      this.sequence.push(this.value);
+    }
   }
 
+  getValue(): number | null {
+    return this.value;
+  }
+
+  getSequence(): number[] {
+    return this.sequence;
+  }
 }
