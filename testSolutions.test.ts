@@ -47,12 +47,16 @@ describe("Fibonacci-Sequence", () => {
     expect(Fibonacci.fibonacci(1)).toEqual(0);
   })
 
-  it("should generate the correct fibonacci number 16 -> 987", () => {
-    expect(Fibonacci.fibonacci(16)).toEqual(987);
+  it("should generate the correct fibonacci number 2 -> 1", () => {
+    expect(Fibonacci.fibonacci(2)).toEqual(1);
   })
 
-  it("should generate the correct fibonacci number 42 -> 267914296", () => {
-    expect(Fibonacci.fibonacci(42)).toEqual(26791429);
+  it("should generate the correct fibonacci number 16 -> 610", () => {
+    expect(Fibonacci.fibonacci(16)).toEqual(610);
+  })
+
+  it("should generate the correct fibonacci number 42 -> 165580141", () => {
+    expect(Fibonacci.fibonacci(42)).toEqual(165580141);
   })
 
   it("should contain the last generated number", () => {

@@ -6,7 +6,19 @@ export default class Fibonacci {
   constructor() {};
 
   static fibonacci(n: number): number {
-    return 0;
+    if (n <= 1) return 0;
+
+    let temp = 0;
+    let numberOne: number = 0;
+    let numberTwo: number = 1;
+
+    for (let i = 0; i < n - 2; i++) {
+      temp = numberTwo;
+      numberTwo = numberOne + numberTwo;
+      numberOne = temp;
+    }
+
+    return numberTwo;
   }
 
   next(n?: number) {
