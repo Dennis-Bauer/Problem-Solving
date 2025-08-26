@@ -12,40 +12,38 @@ export default function solve(sudoku: number[][]): number[][] | false {
 
   const size = sudoku.length; // Size of the given Sudoku
   const solution = sudoku;  // Copy of the given Sudoku which will later contain the result
-  let pos = 0;  // Current In-Line-Position where the Program trie to place a number
+  let pos = 0;  // Current position where the program tries to place a number
   let line = 0; // Current Line-Position where the Program trie to place a number
   let newValue = 1; // Current Value which the Program trie to place
   let oldPositions = [-1];  // Stack of old Positions to backtrack
 
   while(!(pos > (size * size) - 1)) {
-      line = Math.floor(pos / size);
-      const i = pos % size;
+    const i = pos % size;
+    line = Math.floor(pos / size);
 
-      if (line === -1) return false;
+    if (solution[line][i] === 0 || newValue != 1) {
 
-      if (solution[line][i] === 0 || newValue != 1) {
+    if (newValue != 1) 
+        newValue = solution[line][i] + 1;
+        
+        solution[line][i] = 0
+        while (!checkIfNumberCanBePlaced(i, newValue, size, line, solution) && newValue <= size) {
+            newValue++;
+        }
 
-          if (newValue != 1) 
-              newValue = solution[line][i] + 1;
-          
-          solution[line][i] = 0
-          while (!checkIfNumberCanBePlaced(i, newValue, size, line, solution) && newValue <= size) {
-              newValue++;
-          }
+        if (newValue > size) {
+            pos = oldPositions.pop() as number;
+            if (pos === undefined || pos === -1) return false;
+        } else {
+            solution[line][i] = newValue;
+            newValue = 1;
+            oldPositions.push(pos);
+            pos++;
+        }
 
-          if (newValue > size) {
-              pos = oldPositions.pop() as number;
-              if (pos === undefined) return false;
-          } else {
-              solution[line][i] = newValue;
-              newValue = 1;
-              oldPositions.push(pos);
-              pos++;
-          }
-
-      } else {
-          pos++;
-      };
+    } else {
+        pos++;
+    };
   };
 
   return solution;
