@@ -27,3 +27,9 @@ using logic until the whole grid is complete.
 ### Solution Idea
 
 ### [Implementation](./solver.ts)
+
+-----------
+
+### Information's
+This problem is based on the two challenges [Sudoku-Solver](https://www.codingame.com/training/medium/sudoku-solver) and [Mini-sudoku-solver](https://www.codingame.com/training/hard/mini-sudoku-solver) in [Clash Code](https://www.codingame.com).
+Some test cases are from these challenges copied.

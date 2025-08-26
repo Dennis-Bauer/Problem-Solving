@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import sudokuSolver from "./Problems/Sudoku-Solver/solver";
 
-// Test cases from Clash code (Sudoku-Solver Problem and Mini-sudoku-solver)
 describe("Sudoku-Solver", () => {
   const hard9Sudoku = [
     [0,0,6,0,0,0,0,5,0],
