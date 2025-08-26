@@ -23,8 +23,7 @@ export default function solve(sudoku: number[][]): number[][] | false {
 
     if (solution[line][i] === 0 || newValue != 1) {
 
-    if (newValue != 1) 
-        newValue = solution[line][i] + 1;
+        if (newValue != 1) newValue = solution[line][i] + 1;
         
         solution[line][i] = 0
         while (!checkIfNumberCanBePlaced(i, newValue, size, line, solution) && newValue <= size) {
