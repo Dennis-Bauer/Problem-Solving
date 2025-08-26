@@ -25,8 +25,8 @@ export default function solve(sudoku: number[][]): number[][] | false {
 
         if (newValue != 1) newValue = solution[line][i] + 1;
         
-        solution[line][i] = 0
-        while (!checkIfNumberCanBePlaced(i, newValue, size, line, solution) && newValue <= size) {
+        solution[line][i] = 0;
+        while (!checkIfNumberCanBePlaced(newValue, size, i, line, solution) && newValue <= size) {
             newValue++;
         }
 
@@ -48,7 +48,7 @@ export default function solve(sudoku: number[][]): number[][] | false {
   return solution;
 }
 
-function checkBox(posInLine: number, num: number, size: number, lineNumber: number, lines: number[][]): boolean {
+function checkBox(num: number, size: number, posInLine: number, lineNumber: number, lines: number[][]): boolean {
     const boxSize = Math.sqrt(size);
 
     const startVertical = Math.floor(lineNumber / boxSize) * boxSize;
@@ -70,6 +70,6 @@ function checkVertical(posInLine: number, num: number, lines: number[][]): boole
     return !lines.some(line => line[posInLine] === num);
 }
 
-function checkIfNumberCanBePlaced(posInLine: number, value: number, size: number, lineNumber: number, lines: number[][]): boolean {
-    return checkHorizontal(value, lines[lineNumber]) && checkVertical(posInLine, value, lines) && checkBox(posInLine, value, size, lineNumber, lines);
+function checkIfNumberCanBePlaced(value: number, size: number, posInLine: number, lineNumber: number, lines: number[][]): boolean {
+    return checkHorizontal(value, lines[lineNumber]) && checkVertical(posInLine, value, lines) && checkBox(value, size, posInLine, lineNumber, lines);
 }
