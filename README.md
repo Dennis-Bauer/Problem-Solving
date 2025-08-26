@@ -3,6 +3,7 @@ This repository is about solving coding-problems. It contains famous (or not tha
 
 # Problem-list
 - [Upside-Down](./Problems/Upside-Down/README.md) (<span style="color:green">Easy</span>)
+- [Fibonacci-Sequence](./Problems/Fibonacci-Sequence/README.md) (<span style="color:green">Easy</span>)
 
 ## npm-Version:
 The version indicates how much problems are implemented (cp -> Coding Problem)
