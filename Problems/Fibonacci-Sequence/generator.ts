@@ -10,16 +10,16 @@ export default class Fibonacci {
     if (n <= 1) return 0;
 
     let temp = 0;
-    let numberOne: number = 0;
-    let numberTwo: number = 1;
+    let oldNumber: number = 0;
+    let lastNumber: number = 1;
 
     for (let i = 0; i < n - 2; i++) {
-      temp = numberTwo;
-      numberTwo = numberOne + numberTwo;
-      numberOne = temp;
+      temp = lastNumber;
+      lastNumber = oldNumber + lastNumber;
+      oldNumber = temp;
     }
 
-    return numberTwo;
+    return lastNumber;
   }
 
   next(n: number = 1) {
