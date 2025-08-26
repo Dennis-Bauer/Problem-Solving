@@ -32,7 +32,7 @@ export default function solve(sudoku: number[][]): number[][] | false {
 
         if (newValue > size) {
             pos = oldPositions.pop() as number;
-            if (pos === undefined || pos === -1) return false;
+            if (pos === -1) return false;
         } else {
             solution[line][i] = newValue;
             newValue = 1;
