@@ -62,3 +62,9 @@ return string === string.split("").reverse().map(char => char === "6" ? "9" : ch
 
 This allows us to determine whether a string containing only `0`, `6`,
 and `9` looks the same after being flipped upside down.
+
+------------------------------------------------------------------------
+
+### Information's
+This problem comes from the newsletter [Sloth Bytes](https://slothbytes.beehiiv.com). 
+[Post](https://slothbytes.beehiiv.com/p/environment-variable-leaks) from August 20, 2025.
