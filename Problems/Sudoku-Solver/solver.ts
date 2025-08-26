@@ -17,8 +17,6 @@ export default function solve(sudoku: number[][]): number[][] | false {
   let newValue = 1; // Current Value which the Program trie to place
   let oldPositions = [-1];  // Stack of old Positions to backtrack
 
-  let count = 0;
-
   while(!(pos > (size * size) - 1)) {
       line = Math.floor(pos / size);
       const i = pos % size;
@@ -48,10 +46,6 @@ export default function solve(sudoku: number[][]): number[][] | false {
       } else {
           pos++;
       };
-
-      count++;
-
-      //if (count > 100000000) throw new Error ("Infinite loop detected"); // Prevent infinite loops
   };
 
   return solution;
