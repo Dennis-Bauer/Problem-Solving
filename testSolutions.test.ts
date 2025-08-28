@@ -2,7 +2,7 @@ import { describe, it, expect, test } from 'vitest'
 import sudokuSolver from "./Problems/Sudoku-Solver/solver";
 import sameUpsideDown from './Problems/Upside-Down/solver';
 import Fibonacci from './Problems/Fibonacci-Sequence/generator';
-import isValidHexCode from './Problems/Valid-Hex-code/solver';
+import isValidHexCode from './Problems/Valid-Hex-Code/solver';
 
 describe("Sudoku-Solver", () => {
   const hard9Sudoku = [
@@ -280,5 +280,9 @@ describe("Is it a valid Hex Code?", () => {
 
   it("should return false for 'CD5C5C'", () => {
     expect(isValidHexCode("CD5C5C")).toEqual(false);
+  });
+
+  it("should return false for 'eaecee#'", () => {
+    expect(isValidHexCode("eaecee#")).toEqual(false);
   });
 })
