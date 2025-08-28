@@ -5,6 +5,7 @@ This repository is about solving coding-problems. It contains famous (or not tha
 - [Sudoku-Solver](./Problems/Sudoku-Solver/README.md) (<span style="color:orange">Medium</span>)
 - [Upside-Down](./Problems/Upside-Down/README.md) (<span style="color:green">Easy</span>)
 - [Fibonacci-Sequence](./Problems/Fibonacci-Sequence/README.md) (<span style="color:green">Easy</span>)
+- [Valid-Hex-Code](./Problems/Valid-Hex-Code/README.md) (<span style="color:green">Easy</span>)
 
 ## npm-Version:
 The version indicates how much problems are implemented (cp -> Coding Problem)
