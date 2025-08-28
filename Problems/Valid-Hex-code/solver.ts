@@ -1,3 +1,3 @@
 export default function isValidHexCode(string: string): boolean {
-  return false;
+  return string.length === 7 && string.replaceAll(/[a-fA-F0-9]/g, "") === "#";
 }
