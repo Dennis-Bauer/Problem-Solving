@@ -2,6 +2,7 @@ import { describe, it, expect, test } from 'vitest'
 import sudokuSolver from "./Problems/Sudoku-Solver/solver";
 import sameUpsideDown from './Problems/Upside-Down/solver';
 import Fibonacci from './Problems/Fibonacci-Sequence/generator';
+import isValidHexCode from './Problems/Valid-Hex-Code/solver';
 
 describe("Sudoku-Solver", () => {
   const hard9Sudoku = [
@@ -249,5 +250,39 @@ describe("Fibonacci-Sequence", () => {
       267914296, 433494437, 701408733, 1134903170, 
       1836311903, 2971215073
     ]);
+  });
+})
+
+describe("Is it a valid Hex Code?", () => {
+  it("should return true for '#CD5C5C'", () => {
+    expect(isValidHexCode("#CD5C5C")).toEqual(true);
+  });
+
+  it("should return true for '#EAECEE'", () => {
+    expect(isValidHexCode("#EAECEE")).toEqual(true);
+  });
+
+  it("should return true for '#eaecee'", () => {
+    expect(isValidHexCode("#eaecee")).toEqual(true);
+  });
+
+  it("should return false for '#CD5C58C'", () => {
+    expect(isValidHexCode("#CD5C58C")).toEqual(false);
+  });
+
+  it("should return false for '#CD5C5Z'", () => {
+    expect(isValidHexCode("#CD5C5Z")).toEqual(false);
+  });
+
+  it("should return false for '#CD5C&C'", () => {
+    expect(isValidHexCode("#CD5C&C")).toEqual(false);
+  });
+
+  it("should return false for 'CD5C5C'", () => {
+    expect(isValidHexCode("CD5C5C")).toEqual(false);
+  });
+
+  it("should return false for 'eaecee#'", () => {
+    expect(isValidHexCode("eaecee#")).toEqual(false);
   });
 })
