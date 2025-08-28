@@ -292,9 +292,9 @@ describe("Quadratisch-Praktisch-Grün", () => {
 
   const solutionTestOne = {
     areaGarden: 2772, 
-    extraGardensPerHeight: 4, 
-    extraGardensPerWidth: 6, 
-    extraGarden: {
+    miniGardenPerHeight: 4, 
+    miniGardenPerWidth: 6, 
+    miniGarden: {
       amount: 24, 
       height: 10.50, 
       width: 11, 
@@ -308,9 +308,9 @@ describe("Quadratisch-Praktisch-Grün", () => {
 
   const solutionTestTwo = {
     areaGarden: 180, 
-    extraGardensPerHeight: 5, 
-    extraGardensPerWidth: 4, 
-    extraGarden: {
+    miniGardenPerHeight: 5, 
+    miniGardenPerWidth: 4, 
+    miniGarden: {
       amount: 20, 
       height: 3, 
       width: 3, 
@@ -324,9 +324,9 @@ describe("Quadratisch-Praktisch-Grün", () => {
 
   const solutionTestThree = {
     areaGarden: 4235, 
-    extraGardensPerHeight: 6, 
-    extraGardensPerWidth: 6, 
-    extraGarden: {
+    miniGardenPerHeight: 6, 
+    miniGardenPerWidth: 6, 
+    miniGarden: {
       amount: 36, 
       height: 9.17, 
       width: 12.83, 
@@ -340,9 +340,9 @@ describe("Quadratisch-Praktisch-Grün", () => {
 
   const solutionTestFour = {
     areaGarden: 225, 
-    extraGardensPerHeight: 11, 
-    extraGardensPerWidth: 10, 
-    extraGarden: {
+    miniGardenPerHeight: 11, 
+    miniGardenPerWidth: 10, 
+    miniGarden: {
       amount: 110, 
       height: 1.36, 
       width: 1.5, 
@@ -356,9 +356,9 @@ describe("Quadratisch-Praktisch-Grün", () => {
 
   const solutionTestFive = {
     areaGarden: 74000, 
-    extraGardensPerHeight: 5, 
-    extraGardensPerWidth: 264, 
-    extraGarden: {
+    miniGardenPerHeight: 5, 
+    miniGardenPerWidth: 264, 
+    miniGarden: {
       amount: 1320, 
       height: 7.4, 
       width: 7.58, 
@@ -372,9 +372,9 @@ describe("Quadratisch-Praktisch-Grün", () => {
 
   const solutionTestSix = {
     areaGarden: 342005, 
-    extraGardensPerHeight: 120, 
-    extraGardensPerWidth: 308, 
-    extraGarden: {
+    miniGardenPerHeight: 120, 
+    miniGardenPerWidth: 308, 
+    miniGarden: {
       amount: 36960, 
       height: 3.04, 
       width: 3.04, 
@@ -396,9 +396,9 @@ describe("Quadratisch-Praktisch-Grün", () => {
 
   const solutionTestTen = {
     areaGarden: 25, 
-    extraGardensPerHeight: 5, 
-    extraGardensPerWidth: 1, 
-    extraGarden: {
+    miniGardenPerHeight: 5, 
+    miniGardenPerWidth: 1, 
+    miniGarden: {
       amount: 5, 
       height: 1, 
       width: 5, 
