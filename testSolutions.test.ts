@@ -3,6 +3,7 @@ import sudokuSolver from "./Problems/Sudoku-Solver/solver";
 import sameUpsideDown from './Problems/Upside-Down/solver';
 import Fibonacci from './Problems/Fibonacci-Sequence/generator';
 import isValidHexCode from './Problems/Valid-Hex-Code/solver';
+import quadratischPraktischGruen from './Problems/Quadratisch-Praktisch-Grün/solver'
 
 describe("Sudoku-Solver", () => {
   const hard9Sudoku = [
@@ -285,4 +286,127 @@ describe("Is it a valid Hex Code?", () => {
   it("should return false for 'eaecee#'", () => {
     expect(isValidHexCode("eaecee#")).toEqual(false);
   });
+})
+
+describe("Quadratisch-Praktisch-Grün", () => {
+
+  const solutionTestOne = {
+    areaGarden: 2772, 
+    extraGardensPerHeight: 4, 
+    extraGardensPerWidth: 6, 
+    extraGarden: {
+      amount: 24, 
+      height: 10.50, 
+      width: 11, 
+      area: 115.5
+    }
+  }
+
+  it("should return the correct solution for these values: 23 ppl, 42*66", () => {
+    expect(quadratischPraktischGruen(23, 42, 66)).toEqual(solutionTestOne);
+  });
+
+  const solutionTestTwo = {
+    areaGarden: 180, 
+    extraGardensPerHeight: 5, 
+    extraGardensPerWidth: 4, 
+    extraGarden: {
+      amount: 20, 
+      height: 3, 
+      width: 3, 
+      area: 9
+    }
+  }
+
+  it("should return the correct solution for these values: 19 ppl, 15*12", () => {
+    expect(quadratischPraktischGruen(19, 15, 12)).toEqual(solutionTestTwo);
+  });
+
+  const solutionTestThree = {
+    areaGarden: 4235, 
+    extraGardensPerHeight: 6, 
+    extraGardensPerWidth: 6, 
+    extraGarden: {
+      amount: 36, 
+      height: 9.17, 
+      width: 12.83, 
+      area: 117.64
+    }
+  }
+
+  it("should return the correct solution for these values: 36 ppl, 55*77", () => {
+    expect(quadratischPraktischGruen(36, 55, 77)).toEqual(solutionTestThree);
+  });
+
+  const solutionTestFour = {
+    areaGarden: 225, 
+    extraGardensPerHeight: 11, 
+    extraGardensPerWidth: 10, 
+    extraGarden: {
+      amount: 110, 
+      height: 1.36, 
+      width: 1.5, 
+      area: 2.05
+    }
+  }
+
+  it("should return the correct solution for these values: 101 ppl, 15*15", () => {
+    expect(quadratischPraktischGruen(101, 15, 15)).toEqual(solutionTestFour);
+  });
+
+  const solutionTestFive = {
+    areaGarden: 74000, 
+    extraGardensPerHeight: 5, 
+    extraGardensPerWidth: 264, 
+    extraGarden: {
+      amount: 1320, 
+      height: 7.4, 
+      width: 7.58, 
+      area: 56.06
+    }
+  }
+
+  it("should return the correct solution for these values: 1200 ppl, 37*2000", () => {
+    expect(quadratischPraktischGruen(1200, 37, 2000)).toEqual(solutionTestFive);
+  });
+
+  const solutionTestSix = {
+    areaGarden: 342005, 
+    extraGardensPerHeight: 120, 
+    extraGardensPerWidth: 308, 
+    extraGarden: {
+      amount: 36960, 
+      height: 3.04, 
+      width: 3.04, 
+      area: 9.25
+    }
+  }
+
+  it("should return the correct solution for these values: 35000 ppl, 365*937", () => {
+    expect(quadratischPraktischGruen(3500, 365, 937)).toEqual(solutionTestSix);
+  }); 
+
+  it("should return an error for these wrong values: -1 ppl, 5*0", () => {
+    expect(quadratischPraktischGruen(-1, 5, 0)).toThrowError(Error("Wrong Input"))
+  });
+
+  it("should return an error for these wrong values: 1.5 ppl, 5*1", () => {
+    expect(quadratischPraktischGruen(1.5, 5, 1)).toThrowError(Error("Wrong Input"))
+  });
+
+  const solutionTestTen = {
+    areaGarden: 25, 
+    extraGardensPerHeight: 5, 
+    extraGardensPerWidth: 1, 
+    extraGarden: {
+      amount: 5, 
+      height: 1, 
+      width: 5, 
+      area: 5
+    }
+  }
+
+  it("should return the correct solution for these values: 5 ppl, 5*5", () => {
+    expect(quadratischPraktischGruen(5, 5, 5)).toEqual(solutionTestTen);
+  }); 
 })
