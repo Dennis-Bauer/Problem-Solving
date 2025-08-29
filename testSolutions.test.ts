@@ -330,7 +330,7 @@ describe("Quadratisch-Praktisch-Grün", () => {
       amount: 36, 
       height: 9.17, 
       width: 12.83, 
-      area: 117.64
+      area: 117.65
     }
   }
 
@@ -346,7 +346,7 @@ describe("Quadratisch-Praktisch-Grün", () => {
       amount: 110, 
       height: 1.36, 
       width: 1.5, 
-      area: 2.05
+      area: 2.04
     }
   }
 
@@ -362,7 +362,7 @@ describe("Quadratisch-Praktisch-Grün", () => {
       amount: 1320, 
       height: 7.4, 
       width: 7.58, 
-      area: 56.06
+      area: 56.09
     }
   }
 
@@ -378,23 +378,27 @@ describe("Quadratisch-Praktisch-Grün", () => {
       amount: 36960, 
       height: 3.04, 
       width: 3.04, 
-      area: 9.25
+      area: 9.24
     }
   }
 
   it("should return the correct solution for these values: 35000 ppl, 365*937", () => {
-    expect(quadratischPraktischGruen(3500, 365, 937)).toEqual(solutionTestSix);
+    expect(quadratischPraktischGruen(35000, 365, 937)).toEqual(solutionTestSix);
   }); 
 
-  it("should return an error for these wrong values: -1 ppl, 5*0", () => {
-    expect(quadratischPraktischGruen(-1, 5, 0)).toThrowError(Error("Wrong Input"))
+  it("should throw an error for these wrong values: -1 ppl, 5*1", () => {
+    expect(() => quadratischPraktischGruen(-1, 5, 0)).toThrowError("Invalid customer input: Please enter a positive whole number greater than 0.")
   });
 
-  it("should return an error for these wrong values: 1.5 ppl, 5*1", () => {
-    expect(quadratischPraktischGruen(1.5, 5, 1)).toThrowError(Error("Wrong Input"))
+  it("should throw an error for these wrong values: 2.5 ppl, 5*1", () => {
+    expect(() => quadratischPraktischGruen(2.5, 5, 1)).toThrowError("Invalid customer input: Please enter a positive whole number greater than 0.")
   });
 
-  const solutionTestTen = {
+  it("should throw an error for these wrong values: 1 ppl, 5*0", () => {
+    expect(() => quadratischPraktischGruen(1, 5, 0)).toThrowError("Invalid garden size: Both height and width must be numbers greater than 0.")
+  });
+
+  const solutionTestEleven = {
     areaGarden: 25, 
     miniGardenPerHeight: 5, 
     miniGardenPerWidth: 1, 
@@ -407,6 +411,6 @@ describe("Quadratisch-Praktisch-Grün", () => {
   }
 
   it("should return the correct solution for these values: 5 ppl, 5*5", () => {
-    expect(quadratischPraktischGruen(5, 5, 5)).toEqual(solutionTestTen);
+    expect(quadratischPraktischGruen(5, 5, 5)).toEqual(solutionTestEleven);
   }); 
 })
