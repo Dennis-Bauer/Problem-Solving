@@ -13,5 +13,7 @@ The task itself was presented on a large board, which I won’t include here. I 
 
 ## [Umsetzung](solver.ts)
 
-
 ------------------------------------------------------------------------
+
+## Informations
+The testcases are all given from the competition it self, you can find them [here](https://bwinf.de/bundeswettbewerb/43/#c4038) under "Junioraufgabe2: Texthopsen"

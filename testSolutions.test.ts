@@ -4,6 +4,8 @@ import sameUpsideDown from './Problems/Upside-Down/solver';
 import Fibonacci from './Problems/Fibonacci-Sequence/generator';
 import isValidHexCode from './Problems/Valid-Hex-Code/solver';
 import quadratischPraktischGruen from './Problems/Quadratisch-Praktisch-Grün/solver'
+import textHopsen from "./Problems/Texthopsen/solver";
+
 
 describe("Sudoku-Solver", () => {
   const hard9Sudoku = [
@@ -413,4 +415,62 @@ describe("Quadratisch-Praktisch-Grün", () => {
   it("should return the correct solution for these values: 5 ppl, 5*5", () => {
     expect(quadratischPraktischGruen(5, 5, 5)).toEqual(solutionTestEleven);
   }); 
+})
+
+describe("Texthopsen", () => {
+
+  const solutionTestOne =  {
+    bellaTurns: 68, 
+    amiraTurns: 71, 
+    winner: "Bella"
+  }
+
+  it("should return the correct winner for example one -> Bella", () => {
+    expect(textHopsen("./Problems/Texthopsen/examples/hopsen1.txt")).toEqual(solutionTestOne);
+  });
+
+  const solutionTestTwo =  {
+    bellaTurns: 25, 
+    amiraTurns: 25, 
+    winner: "Bella"
+  }
+
+  it("should return the correct winner for example two -> Bella", () => {
+    expect(textHopsen("./Problems/Texthopsen/examples/hopsen2.txt")).toEqual(solutionTestTwo);
+  });
+
+  const solutionTestThree =  {
+    bellaTurns: 18, 
+    amiraTurns: 18, 
+    winner: "Bella"
+  }
+
+  it("should return the correct winner for example three -> Bella", () => {
+    expect(textHopsen("./Problems/Texthopsen/examples/hopsen3.txt")).toEqual(solutionTestThree);
+  });
+
+  const solutionTestFour =  {
+    bellaTurns: 35, 
+    amiraTurns: 32, 
+    winner: "Amira"
+  }
+
+  it("should return the correct winner for example one -> Amira", () => {
+    expect(textHopsen("./Problems/Texthopsen/examples/hopsen4.txt")).toEqual(solutionTestFour);
+  });
+
+  const solutionTestFive =  {
+    bellaTurns: 923, 
+    amiraTurns: 930, 
+    winner: "Bella"
+  }
+
+  it("should return the correct winner for example Five -> Bella", () => {
+    expect(textHopsen("./Problems/Texthopsen/examples/hopsen5.txt")).toEqual(solutionTestFive);
+  });
+
+  it("should return throw an error for an unknown file", () => {
+    expect(() => textHopsen("./Problems/Texthopsen/examples/hopsen-falsch.txt")).toThrowError("The given file does not exist");
+  });
+
 })
