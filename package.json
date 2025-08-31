@@ -1,6 +1,6 @@
 {
   "name": "problem-solving",
-  "version": "CP-5",
+  "version": "CP-6",
   "description": "This Package is all about solving coding problems",
   "homepage": "https://github.com/Dennis-Bauer/Problem-Solving#readme",
   "bugs": {
@@ -22,5 +22,8 @@
     "husky": "^9.1.7",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0"
   }
 }
