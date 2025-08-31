@@ -22,5 +22,8 @@
     "husky": "^9.1.7",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0"
   }
 }

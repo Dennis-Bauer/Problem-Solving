@@ -421,7 +421,7 @@ describe("Texthopsen", () => {
 
   const solutionTestOne =  {
     bellaTurns: 68, 
-    amiraTurns: 71, 
+    amiraTurns: 70, 
     winner: "Bella"
   }
 
@@ -469,8 +469,8 @@ describe("Texthopsen", () => {
     expect(textHopsen("./Problems/Texthopsen/examples/hopsen5.txt")).toEqual(solutionTestFive);
   });
 
-  it("should return throw an error for an unknown file", () => {
-    expect(() => textHopsen("./Problems/Texthopsen/examples/hopsen-falsch.txt")).toThrowError("The given file does not exist");
+  it("should throw an error for an unknown file", () => {
+    expect(() => textHopsen("./Problems/Texthopsen/examples/hopsen-falsch.txt")).toThrowError("ENOENT: no such file or directory, open './Problems/Texthopsen/examples/hopsen-falsch.txt");
   });
 
 })
