@@ -15,6 +15,7 @@
   "type": "commonjs",
   "scripts": {
     "test": "vitest --reporter=verbose",
+    "test:file": "vitest",
     "prepare": "husky"
   },
   "dependencies": {
