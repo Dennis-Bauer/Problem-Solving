@@ -1,58 +1,54 @@
 export default class Fibonacci {
+	private lastValue: number | null = null;
+	private value: number | null = null;
+	private sequence: number[] = [];
 
-  private lastValue: number | null = null;
-  private value: number | null = null;
-  private sequence: number[] = [];
+	static fibonacci(n: number): number {
+		if (n <= 1) return 0;
 
-  constructor() {};
+		let temp = 0;
+		let oldNumber: number = 0;
+		let lastNumber: number = 1;
 
-  static fibonacci(n: number): number {
-    if (n <= 1) return 0;
+		for (let i = 0; i < n - 2; i++) {
+			temp = lastNumber;
+			lastNumber = oldNumber + lastNumber;
+			oldNumber = temp;
+		}
 
-    let temp = 0;
-    let oldNumber: number = 0;
-    let lastNumber: number = 1;
+		return lastNumber;
+	}
 
-    for (let i = 0; i < n - 2; i++) {
-      temp = lastNumber;
-      lastNumber = oldNumber + lastNumber;
-      oldNumber = temp;
-    }
+	next(n: number = 1) {
+		if (this.value === null) {
+			this.value = 0;
 
-    return lastNumber;
-  }
+			this.sequence.push(0);
+			return;
+		}
 
-  next(n: number = 1) {
+		if (this.lastValue === null) {
+			this.lastValue = this.value;
+			this.value = 1;
 
-    if (this.value === null) {
-      this.value = 0;
+			this.sequence.push(1);
+			return;
+		}
 
-      this.sequence.push(0);
-      return;
-    }
+		for (let i = 0; i < n; i++) {
+			const temp: number = this.value;
+			this.value = this.value + this.lastValue!;
+			this.lastValue = temp;
 
-    if (this.lastValue === null) {
-      this.lastValue = this.value;
-      this.value = 1;
+			this.sequence.push(this.value);
+		}
+	}
 
-      this.sequence.push(1);
-      return;
-    }
+	getValue(): number | null {
+		return this.value;
+	}
 
-    for (let i = 0; i < n; i++) {
-      let temp: number = this.value;
-      this.value = this.value + this.lastValue!;
-      this.lastValue = temp;
-
-      this.sequence.push(this.value);
-    }
-  }
-
-  getValue(): number | null {
-    return this.value;
-  }
-
-  getSequence(): number[] {
-    return this.sequence;
-  }
+	getSequence(): number[] {
+		return this.sequence;
+	}
 }
