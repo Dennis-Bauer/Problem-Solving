@@ -4,8 +4,9 @@ export default function solve(sudoku: number[][]): number[][] | false {
 	// Check if the size is a valid sudoku size
 	if (!(Math.floor(Math.sqrt(sudoku.length)) ** 2 === sudoku.length))
 		return false;
+
 	// Check if every array has the same length
-	for (const line in sudoku) {
+	for (const line of sudoku) {
 		if (line.length !== sudoku.length) return false;
 	}
 
