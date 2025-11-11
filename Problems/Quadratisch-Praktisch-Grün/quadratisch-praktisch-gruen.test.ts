@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import quadratischPraktischGruen from './solver'
 
-describe("Quadratisch-Praktisch-Grün", () => {
+describe("Returning the correct solution", () => {
 
   const solutionTestOne = {
     areaGarden: 2772, 
@@ -99,19 +99,7 @@ describe("Quadratisch-Praktisch-Grün", () => {
     expect(quadratischPraktischGruen(35000, 365, 937)).toEqual(solutionTestSix);
   }); 
 
-  it("should throw an error for these wrong values: -1 ppl, 5*1", () => {
-    expect(() => quadratischPraktischGruen(-1, 5, 0)).toThrowError("Invalid customer input: Please enter a positive whole number greater than 0.")
-  });
-
-  it("should throw an error for these wrong values: 2.5 ppl, 5*1", () => {
-    expect(() => quadratischPraktischGruen(2.5, 5, 1)).toThrowError("Invalid customer input: Please enter a positive whole number greater than 0.")
-  });
-
-  it("should throw an error for these wrong values: 1 ppl, 5*0", () => {
-    expect(() => quadratischPraktischGruen(1, 5, 0)).toThrowError("Invalid garden size: Both height and width must be numbers greater than 0.")
-  });
-
-  const solutionTestEleven = {
+  const solutionTestSeven = {
     areaGarden: 25, 
     miniGardenPerHeight: 5, 
     miniGardenPerWidth: 1, 
@@ -124,6 +112,20 @@ describe("Quadratisch-Praktisch-Grün", () => {
   }
 
   it("should return the correct solution for these values: 5 ppl, 5*5", () => {
-    expect(quadratischPraktischGruen(5, 5, 5)).toEqual(solutionTestEleven);
+    expect(quadratischPraktischGruen(5, 5, 5)).toEqual(solutionTestSeven);
   }); 
+})
+
+describe("Throwing the correct errors", () => {
+  it("should throw an error for these wrong values: -1 ppl, 5*1", () => {
+    expect(() => quadratischPraktischGruen(-1, 5, 0)).toThrowError("Invalid customer input: Please enter a positive whole number greater than 0.")
+  });
+
+  it("should throw an error for these wrong values: 2.5 ppl, 5*1", () => {
+    expect(() => quadratischPraktischGruen(2.5, 5, 1)).toThrowError("Invalid customer input: Please enter a positive whole number greater than 0.")
+  });
+
+  it("should throw an error for these wrong values: 1 ppl, 5*0", () => {
+    expect(() => quadratischPraktischGruen(1, 5, 0)).toThrowError("Invalid garden size: Both height and width must be numbers greater than 0.")
+  });
 })

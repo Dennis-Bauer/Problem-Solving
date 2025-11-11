@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import isValidHexCode from './solver'
 
-describe("Is it a valid Hex Code?", () => {
+describe("Validate a string to a truthfully HEXCode", () => {
   it("should return true for '#CD5C5C'", () => {
     expect(isValidHexCode("#CD5C5C")).toEqual(true);
   });
@@ -13,6 +13,10 @@ describe("Is it a valid Hex Code?", () => {
   it("should return true for '#eaecee'", () => {
     expect(isValidHexCode("#eaecee")).toEqual(true);
   });
+
+})
+
+describe("Validate a string to a falsy HEXCode", () => {
 
   it("should return false for '#CD5C58C'", () => {
     expect(isValidHexCode("#CD5C58C")).toEqual(false);

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import textHopsen from './solver'
 
-describe("Texthopsen", () => {
+describe("Returning the correct winner", () => {
 
   const solutionTestOne =  {
     bellaTurns: 68, 
@@ -53,8 +53,10 @@ describe("Texthopsen", () => {
     expect(textHopsen("./Problems/Texthopsen/examples/hopsen5.txt")).toEqual(solutionTestFive);
   });
 
-  it("should throw an error for an unknown file", () => {
+})
+
+describe("Throwing the correct errors", () => {
+   it("should throw an error for an unknown file", () => {
     expect(() => textHopsen("./Problems/Texthopsen/examples/hopsen-falsch.txt")).toThrowError("ENOENT: no such file or directory, open './Problems/Texthopsen/examples/hopsen-falsch.txt");
   });
-
 })

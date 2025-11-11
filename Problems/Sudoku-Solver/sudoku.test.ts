@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import sudokuSolver from './solver'
 
-describe("Sudoku-Solver", () => {
+describe("Solves the Sudokus correctly", () => {
   const hard9Sudoku = [
     [0,0,6,0,0,0,0,5,0],
     [0,0,3,7,0,0,0,0,0],
@@ -136,7 +136,10 @@ describe("Sudoku-Solver", () => {
     expect(sudokuSolver(bigSudoku)).toEqual(bigSudokuSolution);
   })
 
-  const wrongSudoku1 = [
+})
+
+describe("Handling invalid Sudokus", () => {
+    const wrongSudoku1 = [
     [9],
     [1, 1, 1],
   ];
@@ -155,5 +158,4 @@ describe("Sudoku-Solver", () => {
   it("should return false (Wrong Input 2)", () => {
     expect(sudokuSolver(wrongSudoku2)).toBe(false);
   })
-
 })
