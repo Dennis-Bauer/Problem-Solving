@@ -34,3 +34,17 @@ describe("Converts an Integer to the correct title", () => {
 		expect(convertToTitle(209380622941)).toEqual("ZATOICHI");
 	});
 });
+
+describe("Converts wrong input to empty string", () => {
+	it("should return '' for -1", () => {
+		expect(convertToTitle(-1)).toEqual("");
+	});
+
+	it("should return '' for 0", () => {
+		expect(convertToTitle(0)).toEqual("");
+	});
+
+	it("should return '' for -124634", () => {
+		expect(convertToTitle(-124634)).toEqual("");
+	});
+});
