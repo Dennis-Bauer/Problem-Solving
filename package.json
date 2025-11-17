@@ -14,7 +14,7 @@
 	"author": "Dennis Bauer",
 	"type": "commonjs",
 	"scripts": {
-		"test": "vitest --reporter=verbose",
+		"test": "vitest ./Problems --reporter=verbose",
 		"test:file": "vitest",
 		"formate": "biome check --write --unsafe",
 		"prepare": "husky install"
