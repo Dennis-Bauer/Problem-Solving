@@ -6,9 +6,9 @@ export default function evaluatingSimpleAlgebra(task: string): number {
 		.toLowerCase()
 		.split(" ");
 
-	if (!(operator === "+" || operator === "-"))
+	if (r === "x")
 		throw Error(
-			"The given equation does not contain an valid operator ('+' and '-')!",
+			"The given equation does contain an x but at the result position!",
 		);
 
 	const result = Number(r);
@@ -16,16 +16,15 @@ export default function evaluatingSimpleAlgebra(task: string): number {
 	if (firstNumber === "x") {
 		const sNumber = Number(secondNumber);
 		if (operator === "+") return result - sNumber;
-		
-    return result + sNumber;
+
+		return result + sNumber;
 	} else if (secondNumber === "x") {
 		const fNumber = Number(firstNumber);
 		if (operator === "+") return result - fNumber;
-	
-    return fNumber - result;
+
+		return fNumber - result;
 	} else
 		throw Error(
 			"The given equation does not contain an x as the first or second number!",
 		);
-
 }
