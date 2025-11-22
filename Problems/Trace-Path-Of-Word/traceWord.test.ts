@@ -23,6 +23,28 @@ describe("Trace the correct path of a word", () => {
 		expect(traceWord("BISCUIT", grid)).toEqual(solution);
 	});
 
+	it("should return the correct path for the word 'Dennis'", () => {
+		const grid = [
+			["D", "E", "T", "R"],
+			["E", "N", "A", "S"],
+			["N", "N", "V", "W"],
+			["N", "I", "V", "W"],
+			["I", "S", "V", "W"],
+			["S", "D", "V", "W"],
+		];
+
+		const solution = [
+			[0, 0],
+			[1, 0],
+			[2, 0],
+			[3, 0],
+			[4, 0],
+			[5, 0],
+		];
+
+		expect(traceWord("DENNIS", grid)).toEqual(solution);
+	});
+
 	it("should return the correct path for the word 'Ukulele'", () => {
 		const grid = [
 			["N", "H", "B", "W"],
@@ -53,16 +75,14 @@ describe("Trace the correct path of a word", () => {
 		];
 
 		const solution = [
-			[
-				[2, 2],
-				[3, 2],
-				[3, 1],
-				[3, 0],
-				[2, 0],
-				[1, 0],
-				[1, 1],
-				[0, 1],
-			],
+			[2, 2],
+			[3, 2],
+			[3, 1],
+			[3, 0],
+			[2, 0],
+			[1, 0],
+			[1, 1],
+			[0, 1],
 		];
 
 		expect(traceWord("SURVIVAL", grid)).toEqual(solution);
@@ -72,12 +92,34 @@ describe("Trace the correct path of a word", () => {
 describe("Finds correctly no path of a word", () => {
 	it("should return the no path for the word 'HELPFUL'", () => {
 		const grid = [
-  ["L","I","T","R"],
-  ["U","U","A","S"],
-  ["L","U","P","O"],
-  ["E","F","E","H"]
+			["L", "I", "T", "R"],
+			["U", "U", "A", "S"],
+			["L", "U", "P", "O"],
+			["E", "F", "E", "H"],
 		];
 
 		expect(traceWord("HELPFUL", grid)).toEqual(false);
+	});
+
+	it("should return the no path for wrong input", () => {
+		const grid = [
+			["L", "I", "T", "R"],
+			["U", "U", "A", "S"],
+			["L", "U", "P", "O"],
+			["E", "F", "E"],
+		];
+
+		expect(traceWord("HELPFUL", grid)).toEqual(false);
+	});
+
+	it("should return the no path for wrong input", () => {
+		const grid = [
+			["L", "I", "T", "R"],
+			["U", "U", "A", "S"],
+			["L", "U", "P", "O"],
+			["E", "F", "E", "S"],
+		];
+
+		expect(traceWord("", grid)).toEqual(false);
 	});
 });
