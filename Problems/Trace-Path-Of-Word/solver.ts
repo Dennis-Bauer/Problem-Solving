@@ -42,12 +42,11 @@ export default function traceWordPath(
 
 		const path = [pos];
 
-		// Check directions
-		if (pos.y - 1 >= 0) {
-			if (grid[pos.y - 1][pos.x] === word.at(0)) {
-				if (word.length === 1) return [...path, { y: pos.y - 1, x: pos.x }];
+		const createNewPath = (y: number, x: number) => {
+			if (grid[pos.y + y][pos.x + x] === word.at(0)) {
+				if (word.length === 1) return [...path, { y: pos.y + y, x: pos.x + x }];
 
-				const newPath = goPath({ y: pos.y - 1, x: pos.x }, word.slice(1));
+				const newPath = goPath({ y: pos.y + y, x: pos.x + x }, word.slice(1));
 
 				if (newPath.at(-1) !== undefined) {
 					if (grid[newPath.at(-1)!.y][newPath.at(-1)!.x] === word.at(-1)) {
@@ -55,48 +54,31 @@ export default function traceWordPath(
 					}
 				}
 			}
+		};
+
+		// Check directions
+		if (pos.y - 1 >= 0) {
+			const newPath = createNewPath(-1, 0);
+
+			if (newPath) return newPath;
 		}
 
 		if (pos.x - 1 >= 0) {
-			if (grid[pos.y][pos.x - 1] === word.at(0)) {
-				if (word.length === 1) return [...path, { y: pos.y, x: pos.x - 1 }];
+			const newPath = createNewPath(0, -1);
 
-				const newPath = goPath({ y: pos.y, x: pos.x - 1 }, word.slice(1));
-
-				if (newPath.at(-1) !== undefined) {
-					if (grid[newPath.at(-1)!.y][newPath.at(-1)!.x] === word.at(-1)) {
-						return [...path, ...newPath];
-					}
-				}
-			}
+			if (newPath) return newPath;
 		}
 
 		if (pos.y + 1 < grid.length) {
-			if (grid[pos.y + 1][pos.x] === word.at(0)) {
-				if (word.length === 1) return [...path, { y: pos.y + 1, x: pos.x }];
+			const newPath = createNewPath(1, 0);
 
-				const newPath = goPath({ y: pos.y + 1, x: pos.x }, word.slice(1));
-
-				if (newPath.at(-1) !== undefined) {
-					if (grid[newPath.at(-1)!.y][newPath.at(-1)!.x] === word.at(-1)) {
-						return [...path, ...newPath];
-					}
-				}
-			}
+			if (newPath) return newPath;
 		}
 
 		if (pos.x + 1 < grid.length) {
-			if (grid[pos.y][pos.x + 1] === word.at(0)) {
-				if (word.length === 1) return [...path, { y: pos.y, x: pos.x + 1 }];
+			const newPath = createNewPath(0, 1);
 
-				const newPath = goPath({ y: pos.y, x: pos.x + 1 }, word.slice(1));
-
-				if (newPath.at(-1) !== undefined) {
-					if (grid[newPath.at(-1)!.y][newPath.at(-1)!.x] === word.at(-1)) {
-						return [...path, ...newPath];
-					}
-				}
-			}
+			if (newPath) return newPath;
 		}
 
 		return path;
