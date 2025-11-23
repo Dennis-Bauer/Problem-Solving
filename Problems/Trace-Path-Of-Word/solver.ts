@@ -27,7 +27,6 @@ export default function traceWordPath(
 						grid[p.at(0)!.y][p.at(0)!.x] === word.at(0) &&
 						grid[p.at(-1)!.y][p.at(-1)!.x] === word.at(-1)
 					) {
-						console.log(convertPath(p));
 						return convertPath(p);
 					}
 				}
