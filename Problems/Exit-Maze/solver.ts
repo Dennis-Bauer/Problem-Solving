@@ -1,3 +1,3 @@
-export default function exitMaze(maze: number[][]): boolean {
-  return false;
+export default function exitMaze(_maze: number[][]): boolean {
+	return false;
 }

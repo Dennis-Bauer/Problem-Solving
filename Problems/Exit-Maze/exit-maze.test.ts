@@ -64,7 +64,6 @@ describe("The Maze can not be exit", () => {
 		expect(exitMaze(maze)).toEqual(false);
 	});
 
-
 	it("should return false for a wrong maze (1)", () => {
 		const maze = [
 			[0, 1, 1, 1, 1, 0, 0],
