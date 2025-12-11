@@ -22,14 +22,30 @@ const parseInput = (i: string) =>
 describe("Given tests: ", () => {
 	// Get test inputs
 	const examples = [
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball00.txt", "utf-8")),
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball01.txt", "utf-8")),
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball02.txt", "utf-8")),
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball03.txt", "utf-8")),
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball04.txt", "utf-8")),
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball05.txt", "utf-8")),
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball06.txt", "utf-8")),
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball07.txt", "utf-8")),
+		parseInput(
+			fs.readFileSync("./Problems/Bällebad/test-files/ball00.txt", "utf-8"),
+		),
+		parseInput(
+			fs.readFileSync("./Problems/Bällebad/test-files/ball01.txt", "utf-8"),
+		),
+		parseInput(
+			fs.readFileSync("./Problems/Bällebad/test-files/ball02.txt", "utf-8"),
+		),
+		parseInput(
+			fs.readFileSync("./Problems/Bällebad/test-files/ball03.txt", "utf-8"),
+		),
+		parseInput(
+			fs.readFileSync("./Problems/Bällebad/test-files/ball04.txt", "utf-8"),
+		),
+		parseInput(
+			fs.readFileSync("./Problems/Bällebad/test-files/ball05.txt", "utf-8"),
+		),
+		parseInput(
+			fs.readFileSync("./Problems/Bällebad/test-files/ball06.txt", "utf-8"),
+		),
+		parseInput(
+			fs.readFileSync("./Problems/Bällebad/test-files/ball07.txt", "utf-8"),
+		),
 	];
 
 	it("should return 60 balls for example00", () => {
@@ -37,16 +53,14 @@ describe("Given tests: ", () => {
 			amount: 60,
 			day: "Montag",
 			startHour: 14,
-			endHour: 15,
 		});
 	});
 
 	it("should return 96 balls for example01", () => {
-		expect(solve(examples[11])).toEqual({
+		expect(solve(examples[1])).toEqual({
 			amount: 96,
 			day: "Mittwoch",
 			startHour: 11,
-			endHour: 12,
 		});
 	});
 
@@ -55,7 +69,6 @@ describe("Given tests: ", () => {
 			amount: 157,
 			day: "Montag",
 			startHour: 10,
-			endHour: 11,
 		});
 	});
 
@@ -64,7 +77,6 @@ describe("Given tests: ", () => {
 			amount: 152,
 			day: "Freitag",
 			startHour: 9,
-			endHour: 10,
 		});
 	});
 
@@ -73,7 +85,6 @@ describe("Given tests: ", () => {
 			amount: 31,
 			day: "Montag",
 			startHour: 10,
-			endHour: 11,
 		});
 	});
 
@@ -82,7 +93,6 @@ describe("Given tests: ", () => {
 			amount: 60,
 			day: "Donnerstag",
 			startHour: 8,
-			endHour: 9,
 		});
 	});
 
@@ -91,7 +101,6 @@ describe("Given tests: ", () => {
 			amount: 90,
 			day: "Dienstag",
 			startHour: 9,
-			endHour: 10,
 		});
 	});
 
@@ -100,32 +109,39 @@ describe("Given tests: ", () => {
 			amount: 59,
 			day: "Freitag",
 			startHour: 10,
-			endHour: 11,
 		});
 	});
 });
 
 describe("Tests created by the Developer", () => {
 	const examples = [
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/eigenertest.txt", "utf-8")),
-		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/eigenertest1.txt", "utf-8")),
+		parseInput(
+			fs.readFileSync(
+				"./Problems/Bällebad/test-files/eigenertest.txt",
+				"utf-8",
+			),
+		),
+		parseInput(
+			fs.readFileSync(
+				"./Problems/Bällebad/test-files/eigenertest1.txt",
+				"utf-8",
+			),
+		),
 	];
 
 	it("should return XX balls for own example00", () => {
 		expect(solve(examples[0])).toEqual({
-			amount: 0,
-			day: "Montag",
-			startHour: 0,
-			endHour: 0,
+			amount: 41,
+			day: "Mittwoch",
+			startHour: 14,
 		});
 	});
 
 	it("should return XX balls for example00", () => {
 		expect(solve(examples[1])).toEqual({
-			amount: 0,
-			day: "Montag",
-			startHour: 0,
-			endHour: 0,
+			amount: 40,
+			day: "Mittwoch",
+			startHour: 10,
 		});
 	});
 });
