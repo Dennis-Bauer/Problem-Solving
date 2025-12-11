@@ -1,0 +1,7 @@
+6
+4a Mittwoch 14 17 18
+4b Mittwoch 8 16 23
+4c Dienstag 8 12 27
+4d Freitag 9 13 30
+5a Dienstag 14 16 28
+5b Montag 17 20 16

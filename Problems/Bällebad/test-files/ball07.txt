@@ -1,0 +1,19 @@
+18
+EK1 Montag 8 9 29
+EN1 Mittwoch 16 17 22
+EN2 Donnerstag 7 9 19
+EN3 Freitag 10 12 31
+GE1 Donnerstag 10 14 23
+IF1 Dienstag 14 16 24
+MA1 Donnerstag 13 15 31
+MA2 Montag 13 16 25
+PH1 Mittwoch 10 12 21
+PW1 Donnerstag 16 17 18
+SP1 Mittwoch 8 9 28
+SP1 Montag 7 14 28
+SP1 Freitag 7 18 28
+en4 Freitag 12 14 31
+if2 Dienstag 14 16 8
+pw2 Montag 10 12 14
+pw3 Mittwoch 8 11 12
+sp2 Dienstag 16 18 24
