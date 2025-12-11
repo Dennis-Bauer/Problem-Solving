@@ -1,6 +1,8 @@
 name: Test Problem-List
 
-on: pull_request
+on: 
+  pull_request:
+  workflow_call:
 
 jobs:
   test:
@@ -18,3 +20,10 @@ jobs:
       
       - name: Test problems solutions
         run: npm run test
+
+      - name: Add summary
+        if: always()
+        run: |
+          echo "## Test summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{job.status}}" >> $GITHUB_STEP_SUMMARY
