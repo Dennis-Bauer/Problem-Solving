@@ -13,6 +13,7 @@ This repository is about solving coding-problems. It contains famous (or not tha
 - [ExcelSheetColumnTitle](./Problems/ExcelSheetColumnTitle/README.md) (<span style="color:green">Easy</span>)
 - [Evaluating-Simple-Algebra](./Problems/Evaluating-Simple-Algebra/README.md) (<span style="color:green">Easy</span>)
 - [Trace-The-Path-Of-The-Word](./Problems/Trace-Path-Of-World/README.md) (<span style="color:green">Easy</span>)
+- [Sil-ben-tren-nung](./Problems/Sil-ben-tren-nung/README.md) (<span style="color:orange">Medium</span>)
 
 ## npm-Version:
 
