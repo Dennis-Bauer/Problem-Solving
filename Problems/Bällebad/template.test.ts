@@ -111,6 +111,10 @@ describe("Given tests: ", () => {
 			startHour: 10,
 		});
 	});
+
+	it("should fail", () => {
+		expect(false).toBeTruthy();
+	})
 });
 
 describe("Tests created by the Developer", () => {
