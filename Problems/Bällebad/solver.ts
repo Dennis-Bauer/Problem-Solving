@@ -41,12 +41,11 @@ export default function solve(input: ClassType[]): SolutionType {
 				if (i === 10 && day === "Freitag") {
 					console.log(ballAmounts[i]);
 				}
-
 			}
 		});
 
 		if (day === "Freitag") {
-			console.log(ballAmounts)
+			console.log(ballAmounts);
 		}
 
 		let best = -1;
@@ -60,7 +59,6 @@ export default function solve(input: ClassType[]): SolutionType {
 
 		solution[day] = { amount: best, time: bestTime };
 	});
-
 
 	let bestAmount = -1;
 	let bestObj: SolutionType | null = null;
