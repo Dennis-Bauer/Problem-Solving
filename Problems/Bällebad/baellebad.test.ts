@@ -111,7 +111,6 @@ describe("Given tests: ", () => {
 			startHour: 10,
 		});
 	});
-
 });
 
 describe("Tests created by the Developer", () => {

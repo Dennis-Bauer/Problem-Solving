@@ -70,43 +70,38 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
 
           # Failed tests section
-          echo "## ❌ Failed Tests" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-
-          # Make failures collapsible so the summary stays clean
-          echo "<details>" >> "$GITHUB_STEP_SUMMARY"
-          echo "<summary><b>Show failing test details</b></summary>" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-
-          jq -c '.testResults[]' vitest-report.json | while IFS= read -r testGroup; do
-            test_group_status=$(printf '%s' "$testGroup" | jq -r '.status')
-
-            if [ "$test_group_status" = "failed" ]; then
-              name=$(printf '%s' "$testGroup" | jq -r '.name')
-
-              # File / suite header
-              echo "" >> "$GITHUB_STEP_SUMMARY"
-              echo "### 🧩 \`$name\`" >> "$GITHUB_STEP_SUMMARY"
-
-              printf '%s' "$testGroup" | jq -c '.assertionResults[]' | while IFS= read -r test; do
-                test_status=$(printf '%s' "$test" | jq -r '.status')
-                test_name=$(printf '%s' "$test" | jq -r '.ancestorTitles[0] // "Unknown group"')
-                test_title=$(printf '%s' "$test" | jq -r '.title // "Unknown test"')
-
-                if [ "$test_status" = "failed" ]; then
-                  # Bullet list for readability
-                  echo "- ❌ **$test_name** — $test_title" >> "$GITHUB_STEP_SUMMARY"
-                fi
-              done
-            fi
-          done
-
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "</details>" >> "$GITHUB_STEP_SUMMARY"
-
-          # Optional: if everything passed, avoid an empty looking "Failed Tests" section
-          # (No functionality change—just cosmetic. Remove if you want it always visible.)
-          if [ "$failed" = "0" ]; then
+          if [ "$passed" = "false" ]; then
+            echo "## ❌ Failed Tests" >> "$GITHUB_STEP_SUMMARY"
             echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "_No failing tests to show._ ✅" >> "$GITHUB_STEP_SUMMARY"
+
+            # Make failures collapsible so the summary stays clean
+            echo "<details>" >> "$GITHUB_STEP_SUMMARY"
+            echo "<summary><b>Show failing test details</b></summary>" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+
+            jq -c '.testResults[]' vitest-report.json | while IFS= read -r testGroup; do
+              test_group_status=$(printf '%s' "$testGroup" | jq -r '.status')
+
+              if [ "$test_group_status" = "failed" ]; then
+                name=$(printf '%s' "$testGroup" | jq -r '.name')
+
+                # File / suite header
+                echo "" >> "$GITHUB_STEP_SUMMARY"
+                echo "### 🧩 \`$name\`" >> "$GITHUB_STEP_SUMMARY"
+
+                printf '%s' "$testGroup" | jq -c '.assertionResults[]' | while IFS= read -r test; do
+                  test_status=$(printf '%s' "$test" | jq -r '.status')
+                  test_name=$(printf '%s' "$test" | jq -r '.ancestorTitles[0] // "Unknown group"')
+                  test_title=$(printf '%s' "$test" | jq -r '.title // "Unknown test"')
+
+                  if [ "$test_status" = "failed" ]; then
+                    # Bullet list for readability
+                    echo "- ❌ **$test_name** — $test_title" >> "$GITHUB_STEP_SUMMARY"
+                  fi
+                done
+              fi
+            done
+
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "</details>" >> "$GITHUB_STEP_SUMMARY"
           fi
