@@ -28,7 +28,6 @@ describe("Encrypt the word correct", () => {
 		);
 	});
 
-
 	it("should return EiRfg for AeIou", () => {
 		expect(keyword_cipher("etaoinshrdlucmfwypvbgkjqxz", "AeIou.")).toEqual(
 			"EiRfg.",
