@@ -16,7 +16,7 @@
 	"scripts": {
 		"test": "vitest ./Problems --reporter=verbose",
 		"test:file": "vitest",
-		"test:ci": "vitest --run --passWithNoTests --reporter=default --reporter=json > vitest-report.json",
+		"test:ci": "vitest --run --passWithNoTests --reporter=json > vitest-report.json",
 		"formate": "biome check --write --unsafe",
 		"prepare": "husky install"
 	},
