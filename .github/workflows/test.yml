@@ -36,8 +36,8 @@ jobs:
             exit
           fi
 
-          total=$(jq -r '.numTotalTests // 0' vitest-report.json)
-          succeed=$(jq -r '.numPassedTests // 0' vitest-report-json)
+          total=$(jq '.numTotalTests // 0' vitest-report.json)
+          succeed=$(jq '.numPassedTests // 0' vitest-report-json)
           failed=$(jq '.numFailedTests // 0' vitest-report.json)
           passed=$(success)
 
