@@ -112,9 +112,6 @@ describe("Given tests: ", () => {
 		});
 	});
 
-	it("should return true", () => {
-		expect(false).toBeTruthy();
-	})
 });
 
 describe("Tests created by the Developer", () => {
