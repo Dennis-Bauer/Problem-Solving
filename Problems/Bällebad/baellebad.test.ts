@@ -15,7 +15,7 @@ const parseInput = (i: string) =>
 				day: day as DayType,
 				startHour: +startHour,
 				endHour: +endHour,
-				students: +students,
+				students: students,
 			};
 		});
 
