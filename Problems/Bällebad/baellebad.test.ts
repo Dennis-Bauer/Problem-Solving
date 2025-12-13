@@ -112,7 +112,7 @@ describe("Given tests: ", () => {
 		});
 	});
 
-	it("should fail", () => {
+	it("should return true", () => {
 		expect(false).toBeTruthy();
 	})
 });

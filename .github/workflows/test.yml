@@ -36,10 +36,10 @@ jobs:
             exit
           fi
 
-          total=$(jq '.numTotalTests // 0' vitest-report.json)
-          succeed=$(jq '.numPassedTests // 0' vitest-report.json)
-          failed=$(jq '.numFailedTests // 0' vitest-report.json)
-          passed=$(jq '.success // false' vitest-report.json)
+          total=$(jq '.numTotalTests' vitest-report.json)
+          succeed=$(jq '.numPassedTests' vitest-report.json)
+          failed=$(jq '.numFailedTests' vitest-report.json)
+          passed=$(jq '.success' vitest-report.json)
 
           echo "Tests Ran: $total" >> $GITHUB_STEP_SUMMARY
           echo "Test Succeed: $succeed" >> $GITHUB_STEP_SUMMARY
@@ -51,3 +51,27 @@ jobs:
           else
             echo "Test run has failed!" >> $GITHUB_STEP_SUMMARY
           fi
+
+          echo "### Failed Tests" >> $GITHUB_STEP_SUMMARY
+
+          jq -c '.testResults[]' vitest-report.json | while IFS= read -r testGroup; do
+            test_group_status=$(printf '%s' "$testGroup" | jq -r '.status')
+            if [ "$test_group_status" = "failed" ]; then
+
+              name=$(printf '%s' "$testGroup" | jq -r '.name')
+
+              echo "Test $name Failed:" >> $GITHUB_STEP_SUMMARY
+
+              printf '%s' "$testGroup" | jq -c '.assertionResults[]' | while IFS= read -r test; do
+                test_status=$(printf '%s' "$test" | jq -r '.status')
+                test_name=$(printf '%s' "$test" | jq -r '.title')
+
+                if [ "$test_status" = "failed" ]; then
+
+                  echo "Failed Test: $test_name" >> $GITHUB_STEP_SUMMARY
+
+                fi
+
+              done
+            fi
+          done
