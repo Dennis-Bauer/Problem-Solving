@@ -39,7 +39,7 @@ jobs:
           total=$(jq '.numTotalTests // 0' vitest-report.json)
           succeed=$(jq '.numPassedTests // 0' vitest-report-json)
           failed=$(jq '.numFailedTests // 0' vitest-report.json)
-          passed=$(success)
+          passed=$(jq '.success // false' vitest-report.json)
 
           echo "Tests Ran: $(total)" >> $GITHUB_STEP_SUMMARY
           echo "Test Succeed: $(succeed)" >> $GITHUB_STEP_SUMMARY
