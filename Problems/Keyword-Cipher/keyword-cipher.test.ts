@@ -36,7 +36,9 @@ describe("Encrypt the word correct", () => {
 });
 
 describe("While trying to encrypt a word throws the correct error", () => {
-	it("should return something for this input", () => {
-		expect(true).toEqual(true);
+	it("should throw the correct error for an equation with no result", () => {
+		expect(() => keyword_cipher("", "")).toThrowError(
+			"An empty word cannot be encrypted",
+		);
 	});
 });
