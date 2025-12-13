@@ -19,7 +19,7 @@ jobs:
         run: npm install
       
       - name: Test problems solutions
-        run: npm run test
+        run: npm run test:ci
 
       - name: Add summary
         if: always()
@@ -27,3 +27,5 @@ jobs:
           echo "## Test summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{job.status}}" >> $GITHUB_STEP_SUMMARY
+          const s = require(./vitest-report.json)
+          echo s
