@@ -28,9 +28,12 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{job.status}}" >> $GITHUB_STEP_SUMMARY
       
+          echo "## Test summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
           if [ ! -f /vitest-report.json ]; then
-            echo "No test summary found!"
-            return
+            echo "No test summary found!" >> $GITHUB_STEP_SUMMARY
+            exit
           fi
 
           total=$(jq -r '.numTotalTests // 0' vitest-report.json)
@@ -38,8 +41,6 @@ jobs:
           failed=$(jq -r '.numFailedTests // 0' vitest-report.json)
           passed=$(success)
 
-          echo "## Test summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
           echo "Tests Ran: $(total)" >> $GITHUB_STEP_SUMMARY
           echo "Test Succeed: $(succeed)" >> $GITHUB_STEP_SUMMARY
           echo "Test Failed: $(failed)" >> $GITHUB_STEP_SUMMARY
