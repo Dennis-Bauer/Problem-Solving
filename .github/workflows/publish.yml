@@ -64,9 +64,9 @@ jobs:
           fi
 
           awk '
-            $0 ~ start { in=1; next }
-            $0 ~ end   { in=0 }
-            in { print }
+            $0 ~ start { inside=1; next }
+            $0 ~ end   { inside=0 }
+            inside { print }
           ' start="$START_MARKER" end="$END_MARKER" README.md > release-notes.md
 
           echo "# Problems in this release (${{
