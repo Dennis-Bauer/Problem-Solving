@@ -1,7 +1,6 @@
 name: Test Problem-List
 
 on: 
-  push:
   pull_request:
   workflow_call:
 
@@ -29,6 +28,11 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{job.status}}" >> $GITHUB_STEP_SUMMARY
       
+          if [ ! -f /vitest-report.json ]; then
+            echo "No test summary found!"
+            return
+          fi
+
           total=$(jq -r '.numTotalTests // 0' vitest-report.json)
           succeed=$(jq -r '.numPassedTests // 0' vitest-report-json)
           failed=$(jq -r '.numFailedTests // 0' vitest-report.json)
