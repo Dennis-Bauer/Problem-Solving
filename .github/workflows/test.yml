@@ -24,8 +24,25 @@ jobs:
       - name: Add summary
         if: always()
         run: |
-          echo "## Test summary" >> $GITHUB_STEP_SUMMARY
+          echo "## Workflow summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{job.status}}" >> $GITHUB_STEP_SUMMARY
-          const s = require(./vitest-report.json)
-          echo s
+      
+          total=$(jq -r '.numTotalTests // 0' vitest-report.json)
+          succeed=$(jq -r '.numPassedTests // 0' vitest-report-json)
+          failed=$(jq -r '.numFailedTests // 0' vitest-report.json)
+          passed=$(success)
+
+          echo "## Test summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Tests Ran: $(total)" >> $GITHUB_STEP_SUMMARY
+          echo "Test Succeed: $(succeed)" >> $GITHUB_STEP_SUMMARY
+          echo "Test Failed: $(failed)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if passed; then
+            echo "Tests all passed!" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Test run has failed!" >> $GITHUB_STEP_SUMMARY
+          fi 
+
