@@ -40,10 +40,12 @@ jobs:
           succeed=$(jq '.numPassedTests' vitest-report.json)
           failed=$(jq '.numFailedTests' vitest-report.json)
           passed=$(jq '.success' vitest-report.json)
+          seconds=$(( ( $(date +%s) * 1000 - $(jq -r '.startTime' vitest-report.json) ) / 1000 ))
 
           echo "Tests Ran: $total" >> $GITHUB_STEP_SUMMARY
           echo "Test Succeed: $succeed" >> $GITHUB_STEP_SUMMARY
           echo "Test Failed: $failed" >> $GITHUB_STEP_SUMMARY
+          echo "Run for $seconds" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           if passed; then
@@ -69,8 +71,8 @@ jobs:
 
                 if [ "$test_status" = "failed" ]; then
 
-                  echo "  -> $test_name" >> $GITHUB_STEP_SUMMARY
-                  echo "    -> $test_title" >> $GITHUB_STEP_SUMMARY
+                  echo "-> $test_name" >> $GITHUB_STEP_SUMMARY
+                  echo "-> $test_title" >> $GITHUB_STEP_SUMMARY
 
                 fi
 
