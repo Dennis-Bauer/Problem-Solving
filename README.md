@@ -17,6 +17,7 @@ This repository is about solving coding-problems. It contains famous (or not tha
 - [Trace-The-Path-Of-The-Word](./Problems/Trace-Path-Of-World/README.md) (<span style="color:green">Easy</span>)
 - [Sil-ben-tren-nung](./Problems/Sil-ben-tren-nung/README.md) (<span style="color:orange">Medium</span>)
 - [Bällebad](./Problems/Bällebad/README.md) (<span style="color:green">Easy</span>)
+- [Keyword-Cipher](./Problems/Keyword-Cipher/README.md) (<span style="color:green">Easy</span>)
 
 <!-- PROBLEMS_END -->
 
