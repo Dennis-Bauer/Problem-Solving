@@ -37,16 +37,8 @@ export default function solve(input: ClassType[]): SolutionType {
 			for (let i = c.startHour; i < c.endHour; i++) {
 				if (!ballAmounts[i]) ballAmounts[i] = 0;
 				ballAmounts[i] = ballAmounts[i] + c.students;
-
-				if (i === 10 && day === "Freitag") {
-					console.log(ballAmounts[i]);
-				}
 			}
 		});
-
-		if (day === "Freitag") {
-			console.log(ballAmounts);
-		}
 
 		let best = -1;
 		let bestTime = -1;
