@@ -60,15 +60,17 @@ jobs:
 
               name=$(printf '%s' "$testGroup" | jq -r '.name')
 
-              echo "Test $name Failed:" >> $GITHUB_STEP_SUMMARY
+              echo "> $name" >> $GITHUB_STEP_SUMMARY
 
               printf '%s' "$testGroup" | jq -c '.assertionResults[]' | while IFS= read -r test; do
-                test_status=$(printf '%s' "$test" | jq -r '.status')
+                test_status=$(printf '%s' "$test" | jq -r '.ancestorTitles[0]')
                 test_name=$(printf '%s' "$test" | jq -r '.title')
+                test_title=$(printf '%s' "$test" | jq -r '.title')
 
                 if [ "$test_status" = "failed" ]; then
 
-                  echo "Failed Test: $test_name" >> $GITHUB_STEP_SUMMARY
+                  echo "  > $test_name" >> $GITHUB_STEP_SUMMARY
+                  echo "    > $test_title" >> $GITHUB_STEP_SUMMARY
 
                 fi
 
