@@ -63,8 +63,8 @@ jobs:
               echo "-> $name" >> $GITHUB_STEP_SUMMARY
 
               printf '%s' "$testGroup" | jq -c '.assertionResults[]' | while IFS= read -r test; do
-                test_status=$(printf '%s' "$test" | jq -r '.ancestorTitles[0]')
-                test_name=$(printf '%s' "$test" | jq -r '.title')
+                test_status=$(printf '%s' "$test" | jq -r '.status')
+                test_name=$(printf '%s' "$test" | jq -r '.ancestorTitles[0]')
                 test_title=$(printf '%s' "$test" | jq -r '.title')
 
                 if [ "$test_status" = "failed" ]; then
