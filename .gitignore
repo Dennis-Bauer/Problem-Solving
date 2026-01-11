@@ -4,8 +4,5 @@
 # Typescript
 /build
 
-# Visual Studio Code
-.vscode
-
 # Vitest
 vitest-report.json

@@ -1,0 +1,44 @@
+{
+	"version": "2.0.0",
+	"inputs": [
+ {
+      "id": "name",
+      "type": "promptString",
+      "description": "New problem name",
+      "default": "NEW_PROBLEM_X"
+    }
+  ],
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "test",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: test",
+			"detail": "vitest run ./Problems"
+		},
+		{
+			"type": "npm",
+			"script": "test:dev",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: test:dev",
+			"detail": "vitest ./Problems --reporter=verbose"
+		},
+		{
+			"type": "npm",
+			"script": "normalize",
+			"group": "none",
+			"problemMatcher": [],
+			"label": "npm: normalize",
+			"detail": "biome check --write --unsafe"
+		},
+		{
+      "label": "Create new Problem",
+      "type": "shell",
+      "command": "${workspaceFolder}/.vscode/createNewProblem.sh",
+      "args": ["${input:name}"],
+      "problemMatcher": []
+    }
+	]
+}

@@ -14,7 +14,8 @@
 	"author": "Dennis Bauer",
 	"type": "commonjs",
 	"scripts": {
-		"test": "vitest ./Problems --reporter=verbose",
+		"test": "vitest run ./Problems",
+		"test:dev": "vitest ./Problems --reporter=verbose",
 		"test:file": "vitest",
 		"test:ci": "vitest --run --passWithNoTests --reporter=json > vitest-report.json",
 		"normalize": "biome check --write --unsafe",
