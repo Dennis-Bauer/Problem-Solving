@@ -99,7 +99,6 @@ describe("Returns all possible letter combinations", () => {
 	});
 
 	it("should return all possible combinations for 1234567890", () => {
-
 		expect(letterCombinations(1234567890)).toEqual([
 			"adgjmptw ",
 			"adgjmptx ",
