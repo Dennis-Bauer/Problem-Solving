@@ -36,10 +36,32 @@ describe("Finds the correct path for given tickets", () => {
 	it("should return the correct path for 5 tickets", () => {
 		expect(findPath(input3)).toEqual(["A", "D", "A", "R", "Y", "L"]);
 	});
+
+	it("should return the correct path for 6 tickets which have the same start and end", () => {
+		expect(
+			findPath([
+				{ start: "A", end: "A" },
+				{ start: "B", end: "B" },
+				{ start: "A", end: "B" },
+				{ start: "B", end: "C" },
+				{ start: "C", end: "C" },
+				{ start: "C", end: "C" },
+			])
+		).toEqual(["A", "A", "B", "B", "C", "C", "C"]);
+	});
 });
 
-// describe("Another description for the tests. Maybe those which are throwing errors", () => {
-// 	it("should return something for this input", () => {
-// 		expect(true).toEqual(true);
-// 	});
-// });
+describe("Throws the correct error when handling wrong input", () => {
+	it("should throw the correct error for an empty array", () => {
+		expect(() => findPath([])).toThrowError("It's not possible to find a path when no tickets are given!");
+	});
+
+	it("should throw the correct error when no start ticket (Ticket with start = 'A') is given", () => {
+		expect(() =>
+			findPath([
+				{ start: "B", end: "C" },
+				{ start: "D", end: "A" },
+			])
+		).toThrowError("No start Ticket was given (Ticket with start = 'A'");
+	});
+});
