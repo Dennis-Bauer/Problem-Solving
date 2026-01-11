@@ -3,17 +3,7 @@ import letterCombinations from "./solver";
 
 describe("Returns all possible letter combinations", () => {
 	it("should return all possible combinations for 23", () => {
-		expect(letterCombinations(23)).toEqual([
-			"ad",
-			"ae",
-			"af",
-			"bd",
-			"be",
-			"bf",
-			"cd",
-			"ce",
-			"cf",
-		]);
+		expect(letterCombinations(23)).toEqual(["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]);
 	});
 
 	it("should return all possible combinations for ''", () => {
@@ -25,20 +15,7 @@ describe("Returns all possible letter combinations", () => {
 	});
 
 	it("should return all possible combinations for 27", () => {
-		expect(letterCombinations(27)).toEqual([
-			"ap",
-			"aq",
-			"ar",
-			"as",
-			"bp",
-			"bq",
-			"br",
-			"bs",
-			"cp",
-			"cq",
-			"cr",
-			"cs",
-		]);
+		expect(letterCombinations(27)).toEqual(["ap", "aq", "ar", "as", "bp", "bq", "br", "bs", "cp", "cq", "cr", "cs"]);
 	});
 
 	it("should return all possible combinations for 234", () => {
@@ -11770,8 +11747,6 @@ describe("Returns all possible letter combinations", () => {
 
 describe("Throws the corrct error for invalid input", () => {
 	it("should throw the correct error for a negativ value", () => {
-		expect(() => letterCombinations(-232342346)).toThrowError(
-			"The input can't be negativ!",
-		);
+		expect(() => letterCombinations(-232342346)).toThrowError("The input can't be negativ!");
 	});
 });

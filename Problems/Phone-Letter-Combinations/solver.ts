@@ -11,27 +11,17 @@ const numberMap = {
 	0: [" "],
 };
 
-export default function letterCombinations(
-	input: number | "",
-	addon: string = "",
-): string[] {
+export default function letterCombinations(input: number | "", addon: string = ""): string[] {
 	if (input === "") return [];
 	if (input < 0) throw new Error("The input can't be negativ!");
 
 	const output: string[] = [];
 
-	const firstDigit = Number(
-		input.toString().split("")[0],
-	) as keyof typeof numberMap;
+	const firstDigit = Number(input.toString().split("")[0]) as keyof typeof numberMap;
 
 	numberMap[firstDigit].forEach((char) => {
 		if (input > 9) {
-			output.push(
-				...letterCombinations(
-					Number(input.toString().split("").slice(1).join("")),
-					addon + char,
-				),
-			);
+			output.push(...letterCombinations(Number(input.toString().split("").slice(1).join("")), addon + char));
 		} else {
 			output.push(addon + char);
 		}
