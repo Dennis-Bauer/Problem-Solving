@@ -13,13 +13,17 @@ Some Infos. This section can also just get deleted
 
 ### Solution Idea
 
-The Idea to solve this problem
+The idea is, to have a map which has keys for every job. The value for every key are the jobs which the key depends on.
+Now there is also a map for every job where the value for the key is a boolean, which says if this job can be completed or not.
+When creating this second map, the default value gets set to false (job can't be completed) only when there is a dependence for that job. If this job hasn't a dependence, the job can be marked as can be completed.
+Now we loop over the map with the dependencies and set the job to can be completed, if every job which the base job depends on can be completed.
+We do this for x times where x is the length of the given dependencies.
+
+If the can be completed map now has still jobs with 'false' we can return false otherwise we return true.
 
 ---
 
 ### [Implementation](./solver.ts)
-
-The implementation for solving this problem
 
 ---
 
