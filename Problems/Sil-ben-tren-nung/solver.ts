@@ -92,20 +92,12 @@ function splitWort(wort: string): string {
 		}
 		// 4. Folgen auf einen Vokal nicht zwei Konsonanten,
 		// wird nach dem Vokal getrennt.
-		else if (
-			istVokal(i) &&
-			(istVokal(i, 1) || istVokal(i, 2) || i === wortArray.length - 2)
-		) {
+		else if (istVokal(i) && (istVokal(i, 1) || istVokal(i, 2) || i === wortArray.length - 2)) {
 			positionSilbe.push(i);
 		}
 		// 3. Bei drei oder mehr aufeinanderfolgenden Konsonanten
 		//  wird nach dem ersten Konsonanten getrennt.
-		else if (
-			i <= wortArray.length - 3 &&
-			!istVokal(i) &&
-			!istVokal(i, 1) &&
-			!istVokal(i, 2)
-		) {
+		else if (i <= wortArray.length - 3 && !istVokal(i) && !istVokal(i, 1) && !istVokal(i, 2)) {
 			positionSilbe.push(i);
 		}
 		// 2. Der erste und der letzte Buchstabe dürfen nicht getrennt werden.
@@ -137,12 +129,8 @@ function splitWort(wort: string): string {
 
 	function besitzenSilbenVokale(position: number): boolean {
 		return (
-			wortArray
-				.slice(positionSilbe.at(-1)! + 1, position + 1)
-				.some((b) => vokale.includes(b.toLowerCase())) &&
-			wortArray
-				.slice(position + 1)
-				.some((b) => vokale.includes(b.toLowerCase()))
+			wortArray.slice(positionSilbe.at(-1)! + 1, position + 1).some((b) => vokale.includes(b.toLowerCase())) &&
+			wortArray.slice(position + 1).some((b) => vokale.includes(b.toLowerCase()))
 		);
 	}
 
@@ -168,12 +156,7 @@ function splitWort(wort: string): string {
 	function istPaar(pos: number): boolean {
 		if (pos > wortArray.length - 2) return false;
 
-		if (
-			paare.some(
-				(value) =>
-					value.substring(0, 2) === wortArray.slice(pos, pos + 2).join(""),
-			)
-		) {
+		if (paare.some((value) => value.substring(0, 2) === wortArray.slice(pos, pos + 2).join(""))) {
 			if (wortArray.slice(pos, pos + 2000).join("") !== "sc") return true;
 
 			if (wortArray.slice(pos, pos + 3).join("") === "sch") return true;
@@ -198,13 +181,11 @@ function splitWort(wort: string): string {
 		const abstandZuVokal = nextVokal - 1 - position;
 
 		if (abstandZuVokal <= 3 && abstandZuVokal > 0) {
-			return anlaute
-				.flat(2)
-				.some((v) => v === wortArray.slice(position + 1, nextVokal).join(""));
+			return anlaute.flat(2).some((v) => v === wortArray.slice(position + 1, nextVokal).join(""));
 		} else if (abstandZuVokal === 4) {
 			return (
-				wortArray.slice(position + 1, position + 4).join("") ===
-					anlaute[0][0] && anlaute[2].some((v) => v === wortArray[position + 4])
+				wortArray.slice(position + 1, position + 4).join("") === anlaute[0][0] &&
+				anlaute[2].some((v) => v === wortArray[position + 4])
 			);
 		}
 		return false;

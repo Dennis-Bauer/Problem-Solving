@@ -22,30 +22,14 @@ const parseInput = (i: string) =>
 describe("Given tests: ", () => {
 	// Get test inputs
 	const examples = [
-		parseInput(
-			fs.readFileSync("./Problems/Bällebad/test-files/ball00.txt", "utf-8"),
-		),
-		parseInput(
-			fs.readFileSync("./Problems/Bällebad/test-files/ball01.txt", "utf-8"),
-		),
-		parseInput(
-			fs.readFileSync("./Problems/Bällebad/test-files/ball02.txt", "utf-8"),
-		),
-		parseInput(
-			fs.readFileSync("./Problems/Bällebad/test-files/ball03.txt", "utf-8"),
-		),
-		parseInput(
-			fs.readFileSync("./Problems/Bällebad/test-files/ball04.txt", "utf-8"),
-		),
-		parseInput(
-			fs.readFileSync("./Problems/Bällebad/test-files/ball05.txt", "utf-8"),
-		),
-		parseInput(
-			fs.readFileSync("./Problems/Bällebad/test-files/ball06.txt", "utf-8"),
-		),
-		parseInput(
-			fs.readFileSync("./Problems/Bällebad/test-files/ball07.txt", "utf-8"),
-		),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball00.txt", "utf-8")),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball01.txt", "utf-8")),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball02.txt", "utf-8")),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball03.txt", "utf-8")),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball04.txt", "utf-8")),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball05.txt", "utf-8")),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball06.txt", "utf-8")),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/ball07.txt", "utf-8")),
 	];
 
 	it("should return 60 balls for example00", () => {
@@ -115,18 +99,8 @@ describe("Given tests: ", () => {
 
 describe("Tests created by the Developer", () => {
 	const examples = [
-		parseInput(
-			fs.readFileSync(
-				"./Problems/Bällebad/test-files/eigenertest.txt",
-				"utf-8",
-			),
-		),
-		parseInput(
-			fs.readFileSync(
-				"./Problems/Bällebad/test-files/eigenertest1.txt",
-				"utf-8",
-			),
-		),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/eigenertest.txt", "utf-8")),
+		parseInput(fs.readFileSync("./Problems/Bällebad/test-files/eigenertest1.txt", "utf-8")),
 	];
 
 	it("should return XX balls for own example00", () => {

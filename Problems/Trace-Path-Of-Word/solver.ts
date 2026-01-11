@@ -3,19 +3,10 @@ interface coordinate {
 	y: number;
 }
 
-export default function traceWordPath(
-	word: string,
-	grid: string[][],
-): boolean | number[][] {
+export default function traceWordPath(word: string, grid: string[][]): boolean | number[][] {
 	// Input checking
 	if (word.length <= 1) return false;
-	if (
-		grid.reduce(
-			(pre, cur) => (!pre ? false : cur.length !== grid[0].length),
-			true,
-		)
-	)
-		return false;
+	if (grid.reduce((pre, cur) => (!pre ? false : cur.length !== grid[0].length), true)) return false;
 
 	for (let y = 0; y < grid.length; y++) {
 		for (let x = 0; x < grid.length; x++) {
@@ -23,10 +14,7 @@ export default function traceWordPath(
 				const p = goPath({ x, y }, word.slice(1));
 
 				if (p.at(0)) {
-					if (
-						grid[p.at(0)!.y][p.at(0)!.x] === word.at(0) &&
-						grid[p.at(-1)!.y][p.at(-1)!.x] === word.at(-1)
-					) {
+					if (grid[p.at(0)?.y][p.at(0)?.x] === word.at(0) && grid[p.at(-1)?.y][p.at(-1)?.x] === word.at(-1)) {
 						return convertPath(p);
 					}
 				}
@@ -48,7 +36,7 @@ export default function traceWordPath(
 				const newPath = goPath({ y: pos.y + y, x: pos.x + x }, word.slice(1));
 
 				if (newPath.at(-1) !== undefined) {
-					if (grid[newPath.at(-1)!.y][newPath.at(-1)!.x] === word.at(-1)) {
+					if (grid[newPath.at(-1)?.y][newPath.at(-1)?.x] === word.at(-1)) {
 						return [...path, ...newPath];
 					}
 				}

@@ -1,9 +1,4 @@
-export type DayType =
-	| "Montag"
-	| "Dienstag"
-	| "Mittwoch"
-	| "Donnerstag"
-	| "Freitag";
+export type DayType = "Montag" | "Dienstag" | "Mittwoch" | "Donnerstag" | "Freitag";
 
 export type ClassType = {
 	name: string;

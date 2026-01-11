@@ -9,7 +9,7 @@ import Decimal from "decimal.js";
 export default function calculateAnswer(
 	customers: number,
 	gardenHeight: number,
-	gardenWidth: number,
+	gardenWidth: number
 ): {
 	areaGarden: number;
 	miniGardenPerHeight: number;
@@ -30,13 +30,9 @@ export default function calculateAnswer(
 
 	// Testet ob der Input richtig ist
 	if (customers <= 0 || customers % 1 !== 0)
-		throw new Error(
-			"Invalid customer input: Please enter a positive whole number greater than 0.",
-		);
+		throw new Error("Invalid customer input: Please enter a positive whole number greater than 0.");
 	if (gardenHeight <= 0 || gardenWidth <= 0)
-		throw new Error(
-			"Invalid garden size: Both height and width must be numbers greater than 0.",
-		);
+		throw new Error("Invalid garden size: Both height and width must be numbers greater than 0.");
 
 	// Gibt den Flächeninhalt des Gartens aus.
 	resultObject.areaGarden = gardenHeight * gardenWidth;
@@ -50,12 +46,8 @@ export default function calculateAnswer(
 
 	// Berechnet die gesamte Anzahl an Kleingärten und deren aktuelle Höhe/Breite (die Breite/Höhe ändert sich durch die gerundeten Werte).
 	const mGardenTotal = dividing.gardenPerHeight * dividing.gardenPerWidth;
-	const mGardenHeight = parseFloat(
-		(gardenHeight / dividing.gardenPerHeight).toFixed(2),
-	);
-	const mGardenWidth = parseFloat(
-		(gardenWidth / dividing.gardenPerWidth).toFixed(2),
-	);
+	const mGardenHeight = parseFloat((gardenHeight / dividing.gardenPerHeight).toFixed(2));
+	const mGardenWidth = parseFloat((gardenWidth / dividing.gardenPerWidth).toFixed(2));
 	const mGardenSize = parseFloat((mGardenHeight * mGardenWidth).toFixed(2));
 
 	// Gibt die gerade berechneten Werte aus.
@@ -80,7 +72,7 @@ export default function calculateAnswer(
 function calculateBestDividing(
 	customers: number,
 	width: Decimal.Value,
-	height: Decimal.Value,
+	height: Decimal.Value
 ): { gardenPerHeight: number; gardenPerWidth: number } {
 	// Speichert die Differenz zwischen zwei Seitenlängen eines Kleingartens.
 	// Je näher sie bei null liegt, desto quadratischer ist ein Kleingarten
@@ -116,10 +108,7 @@ function calculateBestDividing(
 				// Je kleiner die Differenz ist, desto quadratischer ist der Kleingarten.
 				// Die .abs()-Methode wandelt jedes Ergebnis in ein positives Ergebnis um,
 				// um die Vergleiche immer beizubehalten.
-				const diff = new Decimal(width)
-					.div(m)
-					.minus(new Decimal(height).div(n))
-					.abs();
+				const diff = new Decimal(width).div(m).minus(new Decimal(height).div(n)).abs();
 
 				if (diff.cmp(minDiff) < 0) {
 					minDiff = diff;
@@ -130,10 +119,7 @@ function calculateBestDividing(
 		}
 
 		// Berechnet die neue Differenz für die beste Aufteilung in dieser Iteration
-		const newDiff = new Decimal(height)
-			.div(bestN)
-			.minus(new Decimal(width).div(bestM))
-			.abs();
+		const newDiff = new Decimal(height).div(bestN).minus(new Decimal(width).div(bestM)).abs();
 
 		// Überprüft, ob die Aufteilung der Kleingärten besser ist
 		if (newDiff.cmp(bestDiff) < 0) {

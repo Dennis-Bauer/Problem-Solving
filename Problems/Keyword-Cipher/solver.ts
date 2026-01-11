@@ -9,8 +9,7 @@ export default function keyword_cipher(keyword: string, word: string): string {
 	let extraAlphabet = keyword;
 
 	extraAlphabet.split("").forEach((e) => {
-		if (alphabetA.some((value) => value === e))
-			alphabetA.splice(alphabetA.indexOf(e), 1);
+		if (alphabetA.some((value) => value === e)) alphabetA.splice(alphabetA.indexOf(e), 1);
 	});
 
 	extraAlphabet = extraAlphabet + alphabetA.join("");
@@ -22,10 +21,7 @@ export default function keyword_cipher(keyword: string, word: string): string {
 		.map((value) => {
 			if (alphabetB.indexOf(value.toLowerCase()) === -1) return value;
 
-			if (value.toLowerCase() !== value)
-				return eAlphabetArray[
-					alphabetB.indexOf(value.toLowerCase())
-				].toUpperCase();
+			if (value.toLowerCase() !== value) return eAlphabetArray[alphabetB.indexOf(value.toLowerCase())].toUpperCase();
 
 			return eAlphabetArray[alphabetB.indexOf(value.toLowerCase())];
 		})
