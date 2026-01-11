@@ -20,6 +20,7 @@ This repository is about solving coding-problems. It contains famous (or not tha
 - [Keyword-Cipher](./Problems/Keyword-Cipher/README.md) (<span style="color:green">Easy</span>)
 - [Exit-Maze](./Problems/Exit-Maze/README.md) (<span style="color:green">Easy</span>)
 - [Phone-Letter-Combinations](./Problems/Phone-Letter-Combinations/README.md) (<span style="color:green">Easy</span>)
+- [Itinerary-In-Alphabetical-Order](./Problems/Itinerary-In-Alphabetical-Order/README.md) (<span style="color:green">Easy</span>)
 
 <!-- PROBLEMS_END -->
 
