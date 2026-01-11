@@ -64,12 +64,14 @@ describe("Should be correct when checking if the jobs can be finished", () => {
 				[6, 1],
 				[10, 0],
 			])
-		).toEqual(true);
+		).toEqual(false);
+	});
+
+	it("should return true for one jobs without dependencies", () => {
+		expect(finishAll(1, [])).toEqual(true);
+	});
+
+	it("should return false for one jobs with a dependencies", () => {
+		expect(finishAll(1, [[1, 3]])).toEqual(false);
 	});
 });
-
-// describe("Another description for the tests. Maybe those which are throwing errors", () => {
-// 	it("should return something for this input", () => {
-// 		expect(true).toEqual(true);
-// 	});
-// });
