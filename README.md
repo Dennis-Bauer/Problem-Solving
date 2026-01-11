@@ -18,6 +18,8 @@ This repository is about solving coding-problems. It contains famous (or not tha
 - [Sil-ben-tren-nung](./Problems/Sil-ben-tren-nung/README.md) (<span style="color:orange">Medium</span>)
 - [Bällebad](./Problems/Bällebad/README.md) (<span style="color:green">Easy</span>)
 - [Keyword-Cipher](./Problems/Keyword-Cipher/README.md) (<span style="color:green">Easy</span>)
+- [Exit-Maze](./Problems/Exit-Maze/README.md) (<span style="color:green">Easy</span>)
+- [Phone-Letter-Combinations](./Problems/Phone-Letter-Combinations/README.md) (<span style="color:green">Easy</span>)
 
 <!-- PROBLEMS_END -->
 
