@@ -9,9 +9,7 @@ describe("Returning the correct winner", () => {
 	};
 
 	it("should return the correct winner for example one -> Bella", () => {
-		expect(textHopsen("./Problems/Texthopsen/examples/hopsen1.txt")).toEqual(
-			solutionTestOne,
-		);
+		expect(textHopsen("./Problems/Texthopsen/examples/hopsen1.txt")).toEqual(solutionTestOne);
 	});
 
 	const solutionTestTwo = {
@@ -21,9 +19,7 @@ describe("Returning the correct winner", () => {
 	};
 
 	it("should return the correct winner for example two -> Bella", () => {
-		expect(textHopsen("./Problems/Texthopsen/examples/hopsen2.txt")).toEqual(
-			solutionTestTwo,
-		);
+		expect(textHopsen("./Problems/Texthopsen/examples/hopsen2.txt")).toEqual(solutionTestTwo);
 	});
 
 	const solutionTestThree = {
@@ -33,9 +29,7 @@ describe("Returning the correct winner", () => {
 	};
 
 	it("should return the correct winner for example three -> Bella", () => {
-		expect(textHopsen("./Problems/Texthopsen/examples/hopsen3.txt")).toEqual(
-			solutionTestThree,
-		);
+		expect(textHopsen("./Problems/Texthopsen/examples/hopsen3.txt")).toEqual(solutionTestThree);
 	});
 
 	const solutionTestFour = {
@@ -45,9 +39,7 @@ describe("Returning the correct winner", () => {
 	};
 
 	it("should return the correct winner for example one -> Amira", () => {
-		expect(textHopsen("./Problems/Texthopsen/examples/hopsen4.txt")).toEqual(
-			solutionTestFour,
-		);
+		expect(textHopsen("./Problems/Texthopsen/examples/hopsen4.txt")).toEqual(solutionTestFour);
 	});
 
 	const solutionTestFive = {
@@ -57,18 +49,14 @@ describe("Returning the correct winner", () => {
 	};
 
 	it("should return the correct winner for example Five -> Bella", () => {
-		expect(textHopsen("./Problems/Texthopsen/examples/hopsen5.txt")).toEqual(
-			solutionTestFive,
-		);
+		expect(textHopsen("./Problems/Texthopsen/examples/hopsen5.txt")).toEqual(solutionTestFive);
 	});
 });
 
 describe("Throwing the correct errors", () => {
 	it("should throw an error for an unknown file", () => {
-		expect(() =>
-			textHopsen("./Problems/Texthopsen/examples/hopsen-falsch.txt"),
-		).toThrowError(
-			"ENOENT: no such file or directory, open './Problems/Texthopsen/examples/hopsen-falsch.txt",
+		expect(() => textHopsen("./Problems/Texthopsen/examples/hopsen-falsch.txt")).toThrowError(
+			"ENOENT: no such file or directory, open './Problems/Texthopsen/examples/hopsen-falsch.txt"
 		);
 	});
 });

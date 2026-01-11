@@ -1,6 +1,5 @@
 export default function sameUpsideDown(string: string): boolean {
-	if (string.split("").some((char) => !["0", "6", "9"].includes(char)))
-		return false;
+	if (string.split("").some((char) => !["0", "6", "9"].includes(char))) return false;
 
 	return (
 		string ===

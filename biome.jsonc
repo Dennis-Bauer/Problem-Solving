@@ -1,0 +1,58 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true // ignores the same files/directory's as .gitignore
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 120
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noForEach": "off", // allow forEach usage.
+				"useLiteralKeys": "off", // allow non-literal keys.
+				"noCommaOperator": "on" // disallow the comma operator which is often confusing.
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noAsyncPromiseExecutor": "on", // disallows using an async function as a Promise executor.
+				"noTemplateCurlyInString": "on", // disallow template literal placeholder syntax in regular strings.
+				"noAssignInExpressions": "on", // disallow assignments in expressions.
+				"useIterableCallbackReturn": "off", // enforce consistent return values in iterable callbacks.
+				"noDuplicateTestHooks": "off" // nested describe blocks need separate hooks per vendor.
+			},
+			"correctness": {
+				"useExhaustiveDependencies": "off",
+				"noEmptyCharacterClassInRegex": "on" // disallow empty character classes in regular expression literals.
+			},
+			"performance": {
+				"noAccumulatingSpread": "off" // disallow the use of spread (...) syntax on accumulators.
+			},
+			"style": {
+				"noNonNullAssertion": "off"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"trailingCommas": "es5",
+			"semicolons": "always"
+		}
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	}
+}

@@ -2,8 +2,7 @@ export default function solve(sudoku: number[][]): number[][] | false {
 	/* Check for edge cases */
 
 	// Check if the size is a valid sudoku size
-	if (!(Math.floor(Math.sqrt(sudoku.length)) ** 2 === sudoku.length))
-		return false;
+	if (!(Math.floor(Math.sqrt(sudoku.length)) ** 2 === sudoku.length)) return false;
 
 	// Check if every array has the same length
 	for (const line of sudoku) {
@@ -25,10 +24,7 @@ export default function solve(sudoku: number[][]): number[][] | false {
 			if (newValue !== 1) newValue = solution[line][i] + 1;
 
 			solution[line][i] = 0;
-			while (
-				!checkIfNumberCanBePlaced(newValue, size, i, line, solution) &&
-				newValue <= size
-			) {
+			while (!checkIfNumberCanBePlaced(newValue, size, i, line, solution) && newValue <= size) {
 				newValue++;
 			}
 
@@ -49,13 +45,7 @@ export default function solve(sudoku: number[][]): number[][] | false {
 	return solution;
 }
 
-function checkBox(
-	num: number,
-	size: number,
-	posInLine: number,
-	lineNumber: number,
-	lines: number[][],
-): boolean {
+function checkBox(num: number, size: number, posInLine: number, lineNumber: number, lines: number[][]): boolean {
 	const boxSize = Math.sqrt(size);
 
 	const startVertical = Math.floor(lineNumber / boxSize) * boxSize;
@@ -73,11 +63,7 @@ function checkHorizontal(num: number, line: number[]): boolean {
 	return !line.some((val) => val === num);
 }
 
-function checkVertical(
-	posInLine: number,
-	num: number,
-	lines: number[][],
-): boolean {
+function checkVertical(posInLine: number, num: number, lines: number[][]): boolean {
 	return !lines.some((line) => line[posInLine] === num);
 }
 
@@ -86,7 +72,7 @@ function checkIfNumberCanBePlaced(
 	size: number,
 	posInLine: number,
 	lineNumber: number,
-	lines: number[][],
+	lines: number[][]
 ): boolean {
 	return (
 		checkHorizontal(value, lines[lineNumber]) &&

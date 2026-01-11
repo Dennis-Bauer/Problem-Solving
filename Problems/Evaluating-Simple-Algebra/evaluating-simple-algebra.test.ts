@@ -34,19 +34,19 @@ describe("Solves the equation correctly", () => {
 describe("Throws the correct error when receiving an invalid equation", () => {
 	it("should throw the correct error for an equation with a multiplication operator", () => {
 		expect(() => evaluatingSimpleAlgebra("1 * x = 3")).toThrowError(
-			"The given equation contains elements which are not allowed!",
+			"The given equation contains elements which are not allowed!"
 		);
 	});
 
 	it("should throw the correct error for an equation with no x", () => {
 		expect(() => evaluatingSimpleAlgebra("1 - 2 = 3")).toThrowError(
-			"The given equation does not contain an x as the first or second number!",
+			"The given equation does not contain an x as the first or second number!"
 		);
 	});
 
 	it("should throw the correct error for an equation with no result", () => {
 		expect(() => evaluatingSimpleAlgebra("1 - x = x")).toThrowError(
-			"The given equation does contain an x but at the result position!",
+			"The given equation does contain an x but at the result position!"
 		);
 	});
 });

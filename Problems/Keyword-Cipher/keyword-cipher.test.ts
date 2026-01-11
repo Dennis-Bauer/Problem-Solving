@@ -23,22 +23,16 @@ describe("Encrypt the word correct", () => {
 	});
 
 	it("should return eirfg for aeiou", () => {
-		expect(keyword_cipher("etaoinshrdlucmfwypvbgkjqxz", "aeiou")).toEqual(
-			"eirfg",
-		);
+		expect(keyword_cipher("etaoinshrdlucmfwypvbgkjqxz", "aeiou")).toEqual("eirfg");
 	});
 
 	it("should return EiRfg for AeIou", () => {
-		expect(keyword_cipher("etaoinshrdlucmfwypvbgkjqxz", "AeIou.")).toEqual(
-			"EiRfg.",
-		);
+		expect(keyword_cipher("etaoinshrdlucmfwypvbgkjqxz", "AeIou.")).toEqual("EiRfg.");
 	});
 });
 
 describe("While trying to encrypt a word throws the correct error", () => {
 	it("should throw the correct error for an equation with no result", () => {
-		expect(() => keyword_cipher("", "")).toThrowError(
-			"An empty word cannot be encrypted",
-		);
+		expect(() => keyword_cipher("", "")).toThrowError("An empty word cannot be encrypted");
 	});
 });

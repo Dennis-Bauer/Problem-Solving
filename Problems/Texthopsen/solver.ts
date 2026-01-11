@@ -58,9 +58,7 @@ function runThroughGame(text: string, startPosition: number) {
 					letterNumber = 30;
 					break; //ß
 				default:
-					throw new Error(
-						"There is a symbole in the text which isn't allowed!",
-					); //Alles andere (Nicht möglich)
+					throw new Error("There is a symbole in the text which isn't allowed!"); //Alles andere (Nicht möglich)
 			}
 		}
 
