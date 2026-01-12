@@ -25,6 +25,18 @@ describe("Returns the correct remaining numbers", () => {
 	it("should return [17, 100] for [6, 5, 6, 100] input", () => {
 		expect(nom_nom([6, 5, 6, 100])).toEqual([17, 100]);
 	});
+
+	it("should return [84] for [82, 2] input", () => {
+		expect(nom_nom([82, 2])).toEqual([84]);
+	});
+
+	it("should return [] for [] input", () => {
+		expect(nom_nom([])).toEqual([]);
+	});
+
+	it("should return [2] for [2] input", () => {
+		expect(nom_nom([2])).toEqual([2]);
+	});
 });
 
 // describe("Another description for the tests. Maybe those which are throwing errors", () => {
