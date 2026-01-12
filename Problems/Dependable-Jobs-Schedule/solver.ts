@@ -14,8 +14,6 @@ export default function finishAll(taskAmount: number, dependencies: number[][]):
 		}
 	}
 
-	console.log(dep);
-
 	for (let i = 0; i < dependencies.length; i++) {
 		for (const d of Array.from(dep.entries())) {
 			if (!canBeFinished.get(d[0])) {
