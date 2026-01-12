@@ -37,12 +37,17 @@ describe("Returns the shortes path from 'A' to all other Destinations", () => {
 		{
 			A: "F",
 			B: "G",
-			length: 2,
+			length: 5,
 		},
 		{
 			A: "G",
 			B: "C",
 			length: 2,
+		},
+		{
+			A: "E",
+			B: "F",
+			length: 1,
 		},
 	];
 
