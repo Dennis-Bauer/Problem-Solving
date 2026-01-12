@@ -12,13 +12,13 @@ Some Infos. This section can also just get deleted
 
 ### Solution Idea
 
-The Idea to solve this problem
+This is a really simple approach.
+The base idea is to loop over the given array and check the current number with the previous number. If this previous number is bigger than the current number, we set the current number to the sum of current and previous, and also set the previous number to undefined which indicates that this number ate a other number.
+We repeat the progress until the last number is reached. Now we return the array without undefined values and this will be the result.
 
 ---
 
 ### [Implementation](./solver.ts)
-
-The implementation for solving this problem
 
 ---
 

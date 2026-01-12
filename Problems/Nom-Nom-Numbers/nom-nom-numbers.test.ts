@@ -30,6 +30,10 @@ describe("Returns the correct remaining numbers", () => {
 		expect(nom_nom([82, 2])).toEqual([84]);
 	});
 
+	it("should return [2, 20, 80, 1] for [2, 20, 81] input", () => {
+		expect(nom_nom([2, 20, 80, 1])).toEqual([2, 20, 81]);
+	});
+
 	it("should return [] for [] input", () => {
 		expect(nom_nom([])).toEqual([]);
 	});
