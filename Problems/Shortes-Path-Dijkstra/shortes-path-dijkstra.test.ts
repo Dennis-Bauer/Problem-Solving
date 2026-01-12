@@ -50,9 +50,39 @@ describe("Returns the shortes path from 'A' to all other Destinations", () => {
 			length: 1,
 		},
 	];
+	const result1 = [
+		{
+			length: 0,
+			path: ["A"],
+		},
+		{
+			length: 1,
+			path: ["A", "B"],
+		},
+		{
+			length: 3,
+			path: ["A", "B", "C"],
+		},
+		{
+			length: 10,
+			path: ["A", "B", "C", "D"],
+		},
+		{
+			length: 9,
+			path: ["A", "G", "F", "E"],
+		},
+		{
+			length: 8,
+			path: ["A", "G", "F"],
+		},
+		{
+			length: 3,
+			path: ["A", "G"],
+		},
+	];
 
 	it("should return all paths for 7 destinations", () => {
-		expect(findShortesPaths("A", stations1, streets1)).toEqual(true);
+		expect(findShortesPaths("A", stations1, streets1)).toEqual(result1);
 	});
 
 	const stations2 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
@@ -143,9 +173,51 @@ describe("Returns the shortes path from 'A' to all other Destinations", () => {
 			length: 10,
 		},
 	];
+	const result2 = [
+		{
+			length: 0,
+			path: ["A"],
+		},
+		{
+			length: 5,
+			path: ["A", "B"],
+		},
+		{
+			length: 2,
+			path: ["A", "C"],
+		},
+		{
+			length: 6,
+			path: ["A", "D"],
+		},
+		{
+			length: 25,
+			path: ["A", "D", "G", "H", "E"],
+		},
+		{
+			length: 19,
+			path: ["A", "D", "F"],
+		},
+		{
+			length: 8,
+			path: ["A", "D", "G"],
+		},
+		{
+			length: 16,
+			path: ["A", "D", "G", "H"],
+		},
+		{
+			length: 20,
+			path: ["A", "D", "G", "J", "I"],
+		},
+		{
+			length: 14,
+			path: ["A", "D", "G", "J"],
+		},
+	];
 
 	it("should return all paths for 10 destinations", () => {
-		expect(findShortesPaths("A", stations2, streets2)).toEqual(true);
+		expect(findShortesPaths("A", stations2, streets2)).toEqual(result2);
 	});
 
 	const stations3 = ["A", "B", "C", "D", "E", "F", "G", "H", "Z"];
@@ -173,9 +245,47 @@ describe("Returns the shortes path from 'A' to all other Destinations", () => {
 
 		{ A: "H", B: "Z", length: 2 },
 	];
+	const result3 = [
+		{
+			length: 0,
+			path: ["A"],
+		},
+		{
+			length: 2,
+			path: ["A", "B"],
+		},
+		{
+			length: 2,
+			path: ["A", "C"],
+		},
+		{
+			length: 3,
+			path: ["A", "D"],
+		},
+		{
+			length: 4,
+			path: ["A", "D", "E"],
+		},
+		{
+			length: 4,
+			path: ["A", "B", "F"],
+		},
+		{
+			length: 6,
+			path: ["A", "B", "F", "G"],
+		},
+		{
+			length: 5,
+			path: ["A", "D", "H"],
+		},
+		{
+			length: 7,
+			path: ["A", "D", "H", "Z"],
+		},
+	];
 
 	it("should return all paths for 9 destinations", () => {
-		expect(findShortesPaths("A", stations3, streets3)).toEqual(true);
+		expect(findShortesPaths("A", stations3, streets3)).toEqual(result3);
 	});
 
 	const stations4 = [
@@ -241,14 +351,100 @@ describe("Returns the shortes path from 'A' to all other Destinations", () => {
 		{ A: "Ger", B: "Br", length: 20 },
 		{ A: "Ger", B: "Wo", length: 23 },
 	];
+	const result4 = [
+		{
+			length: 0,
+			path: ["A"],
+		},
+		{
+			length: 12,
+			path: ["A", "AK1"],
+		},
+		{
+			length: 22,
+			path: ["A", "AK1", "Lu"],
+		},
+		{
+			length: 25,
+			path: ["A", "AK1", "Lu", "Ma"],
+		},
+		{
+			length: 34,
+			path: ["A", "AK1", "Lu", "Ma", "Vie"],
+		},
+		{
+			length: 42,
+			path: ["A", "AK1", "Lu", "Ma", "Vie", "We"],
+		},
+		{
+			length: 41,
+			path: ["A", "AK1", "Lu", "Ma", "AK2"],
+		},
+		{
+			length: 50,
+			path: ["A", "AK1", "Lu", "Ma", "AK2", "Hd"],
+		},
+		{
+			length: 49,
+			path: ["A", "AK1", "Lu", "Ma", "AK2", "Sch"],
+		},
+		{
+			length: 32,
+			path: ["A", "AK1", "Sp"],
+		},
+		{
+			length: 43,
+			path: ["A", "AK1", "Sp", "Nb"],
+		},
+		{
+			length: 51,
+			path: ["A", "AK1", "Sp", "Nb", "SIL"],
+		},
+		{
+			length: 54,
+			path: ["A", "AK1", "Lu", "Ma", "Vie", "We", "Br"],
+		},
+		{
+			length: 56,
+			path: ["A", "AK1", "Lu", "Ma", "Vie", "We", "Ka"],
+		},
+		{
+			length: 63,
+			path: ["A", "AK1", "Neu", "LD", "Kan", "Wo"],
+		},
+		{
+			length: 57,
+			path: ["A", "AK1", "Neu", "LD", "Kan"],
+		},
+		{
+			length: 46,
+			path: ["A", "AK1", "Neu", "LD"],
+		},
+		{
+			length: 26,
+			path: ["A", "AK1", "Neu"],
+		},
+		{
+			length: 50,
+			path: ["A", "AK1", "Sp", "Ger"],
+		},
+	];
 
 	it("should return all paths for 19 destinations", () => {
-		expect(findShortesPaths("A", stations4, streets4)).toEqual(true);
+		expect(findShortesPaths("A", stations4, streets4)).toEqual(result4);
 	});
 });
 
-// describe("Another description for the tests. Maybe those which are throwing errors", () => {
-// 	it("should return something for this input", () => {
-// 		expect(true).toEqual(true);
-// 	});
-// });
+describe("When the given Stations are invalid, the function should throw the correct error!", () => {
+	it("should throw an Error because the start isn't connected to other stations", () => {
+		expect(() => findShortesPaths("A", ["A", "B", "C"], [{ A: "B", B: "C", length: 15 }])).toThrowError(
+			`The station ${"A"} has no connection to any other station!`
+		);
+	});
+
+	it("should throw an Error because some stations aren't connected to other stations", () => {
+		expect(() => findShortesPaths("A", ["A", "B", "C"], [{ A: "A", B: "C", length: 15 }])).toThrowError(
+			`It is not possible to calculate a path for station '${"B"}'. It probably hasn't a connection to other stations!`
+		);
+	});
+});
