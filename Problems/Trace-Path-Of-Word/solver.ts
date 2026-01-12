@@ -14,7 +14,7 @@ export default function traceWordPath(word: string, grid: string[][]): boolean |
 				const p = goPath({ x, y }, word.slice(1));
 
 				if (p.at(0)) {
-					if (grid[p.at(0)?.y][p.at(0)?.x] === word.at(0) && grid[p.at(-1)?.y][p.at(-1)?.x] === word.at(-1)) {
+					if (grid[p.at(0)!.y][p.at(0)!.x] === word.at(0) && grid[p.at(-1)!.y][p.at(-1)!.x] === word.at(-1)) {
 						return convertPath(p);
 					}
 				}
@@ -36,7 +36,7 @@ export default function traceWordPath(word: string, grid: string[][]): boolean |
 				const newPath = goPath({ y: pos.y + y, x: pos.x + x }, word.slice(1));
 
 				if (newPath.at(-1) !== undefined) {
-					if (grid[newPath.at(-1)?.y][newPath.at(-1)?.x] === word.at(-1)) {
+					if (grid[newPath.at(-1)!.y][newPath.at(-1)!.x] === word.at(-1)) {
 						return [...path, ...newPath];
 					}
 				}

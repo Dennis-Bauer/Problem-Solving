@@ -23,6 +23,7 @@ This repository is about solving coding-problems. It contains famous (or not tha
 - [Itinerary-In-Alphabetical-Order](./Problems/Itinerary-In-Alphabetical-Order/README.md) (<span style="color:green">Easy</span>)
 - [Dependable-Jobs-Schedule](./Problems/Dependable-Jobs-Schedule/README.md) (<span style="color:green">Easy</span>)
 - [Nom-Nom-Numbers](./Problems/Nom-Nom-Numbers/README.md) (<span style="color:green">Easy</span>)
+- [Shortes-Path-Dijkstra](./Problems/Shortes-Path-Dijkstra/README.md) <span style="color:orange">Medium</span>
 
 <!-- PROBLEMS_END -->
 

@@ -18,6 +18,7 @@
 		"test:dev": "vitest ./Problems --reporter=verbose",
 		"test:file": "vitest",
 		"test:ci": "vitest --run --passWithNoTests --reporter=json > vitest-report.json",
+		"build": "tsc",
 		"normalize": "biome check --write --unsafe",
 		"prepare": "husky install"
 	},
