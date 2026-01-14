@@ -1,15 +1,15 @@
 name: Publish Problem-List
 
 on:
-  pull_request:
-    types: [closed]
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
   release:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
@@ -50,7 +50,6 @@ jobs:
           else
             echo "do_release=true" >> "$GITHUB_OUTPUT"
           fi
-
 
       - name: Build release notes from README section
         if: steps.decide.outputs.do_release == 'true'
