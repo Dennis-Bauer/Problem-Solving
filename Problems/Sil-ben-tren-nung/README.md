@@ -1,4 +1,4 @@
-# Problem Name
+# Sil-ben-tren-nung
 You can find the Problem explained (In german) on the pdf [here](./Junioraufgabe-2.pdf).
 If you want to see the progress of solving this Problem, you can go to [this](https://github.com/Dennis-Bauer/JWINF-43_Runde-3) Repository.
 
