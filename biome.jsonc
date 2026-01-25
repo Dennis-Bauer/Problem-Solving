@@ -3,7 +3,7 @@
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
-		"useIgnoreFile": true // ignores the same files/directory's as .gitignore
+		"useIgnoreFile": true
 	},
 	"formatter": {
 		"enabled": true,
@@ -16,24 +16,19 @@
 		"rules": {
 			"recommended": true,
 			"complexity": {
-				"noForEach": "off", // allow forEach usage.
-				"useLiteralKeys": "off", // allow non-literal keys.
-				"noCommaOperator": "on" // disallow the comma operator which is often confusing.
+				"noForEach": "off",
+				"useLiteralKeys": "off",
+				"noBannedTypes": "off"
 			},
 			"suspicious": {
-				"noExplicitAny": "off",
-				"noAsyncPromiseExecutor": "on", // disallows using an async function as a Promise executor.
-				"noTemplateCurlyInString": "on", // disallow template literal placeholder syntax in regular strings.
-				"noAssignInExpressions": "on", // disallow assignments in expressions.
-				"useIterableCallbackReturn": "off", // enforce consistent return values in iterable callbacks.
-				"noDuplicateTestHooks": "off" // nested describe blocks need separate hooks per vendor.
+				"noExplicitAny": "off"
 			},
 			"correctness": {
 				"useExhaustiveDependencies": "off",
-				"noEmptyCharacterClassInRegex": "on" // disallow empty character classes in regular expression literals.
+				"noEmptyCharacterClassInRegex": "on"
 			},
 			"performance": {
-				"noAccumulatingSpread": "off" // disallow the use of spread (...) syntax on accumulators.
+				"noAccumulatingSpread": "off"
 			},
 			"style": {
 				"noNonNullAssertion": "off"
