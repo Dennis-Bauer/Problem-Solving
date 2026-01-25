@@ -6,3 +6,6 @@
 
 # Vitest
 vitest-report.json
+
+# MacOS
+.DS_Store
