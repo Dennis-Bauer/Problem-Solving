@@ -22,7 +22,7 @@ We repeat the progress until the last number is reached. Now we return the array
 
 ---
 
-### Information's %Informations where the problem comes from. Most of them came from Sloth Byte%
+### Information's
 
 This problem comes from the newsletter [Sloth Bytes](https://slothbytes.beehiiv.com).
 [Post](https://slothbytes.beehiiv.com/p/the-future-of-software-engineering-interviews) from October 28, 2025.
