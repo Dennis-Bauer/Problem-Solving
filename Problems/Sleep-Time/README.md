@@ -18,7 +18,7 @@ Now we check if the hour value is negativ. If yes, we add this value to 24. Thes
 
 ---
 
-### Information's %Informations where the problem comes from. Most of them came from Sloth Byte%
+### Information's
 
 This problem comes from the newsletter [Sloth Bytes](https://slothbytes.beehiiv.com).
-[Post](https://slothbytes.beehiiv.com/p/two-factor-codes) from August 26, 2025.
+[Post](https://slothbytes.beehiiv.com/p/the-command-line-for-dummies) from November 5, 2025.
