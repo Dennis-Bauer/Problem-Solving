@@ -24,6 +24,7 @@ This repository is about solving coding-problems. It contains famous (or not tha
 - [Dependable-Jobs-Schedule](./Problems/Dependable-Jobs-Schedule/README.md) (<span style="color:green">Easy</span>)
 - [Nom-Nom-Numbers](./Problems/Nom-Nom-Numbers/README.md) (<span style="color:green">Easy</span>)
 - [Shortes-Path-Dijkstra](./Problems/Shortes-Path-Dijkstra/README.md) <span style="color:orange">Medium</span>
+- [Sleep-Time](./Problems/Sleep-Time/README.md) (<span style="color:green">Easy</span>)
 
 <!-- PROBLEMS_END -->
 
