@@ -1,35 +1,35 @@
 {
-	"name": "problem-solving",
-	"version": "CP-16",
-	"description": "This Package is all about solving coding problems",
-	"homepage": "https://github.com/Dennis-Bauer/Problem-Solving#readme",
-	"bugs": {
-		"url": "https://github.com/Dennis-Bauer/Problem-Solving/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Dennis-Bauer/Problem-Solving.git"
-	},
-	"license": "ISC",
-	"author": "Dennis Bauer",
-	"type": "commonjs",
-	"scripts": {
-		"test": "vitest run ./Problems",
-		"test:dev": "vitest ./Problems --reporter=verbose",
-		"test:file": "vitest",
-		"test:ci": "vitest --run --passWithNoTests --reporter=json > vitest-report.json",
-		"build": "tsc",
-		"normalize": "biome check --write --unsafe",
-		"prepare": "husky install"
-	},
-	"dependencies": {
-		"decimal.js": "^10.6.0",
-		"husky": "^9.1.7",
-		"typescript": "^5.9.2",
-		"vitest": "^3.2.4"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "2.3.11",
-		"@types/node": "^24.3.0"
-	}
+  "name": "problem-solving",
+  "version": "CP-19",
+  "description": "This Package is all about solving coding problems",
+  "homepage": "https://github.com/Dennis-Bauer/Problem-Solving#readme",
+  "bugs": {
+    "url": "https://github.com/Dennis-Bauer/Problem-Solving/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dennis-Bauer/Problem-Solving.git"
+  },
+  "license": "ISC",
+  "author": "Dennis Bauer",
+  "type": "commonjs",
+  "scripts": {
+    "test": "vitest run ./Problems",
+    "test:dev": "vitest ./Problems --reporter=verbose",
+    "test:file": "vitest",
+    "test:ci": "vitest --run --passWithNoTests --reporter=json > vitest-report.json",
+    "build": "tsc",
+    "normalize": "biome check --write --unsafe",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "decimal.js": "^10.6.0",
+    "husky": "^9.1.7",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.11",
+    "@types/node": "^24.3.0"
+  }
 }
