@@ -18,6 +18,109 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Validate README problem stats
+        run: |
+          node <<'EOF'
+          const fs = require('node:fs');
+          const path = require('node:path');
+
+          const summaryFile = process.env.GITHUB_STEP_SUMMARY;
+          const repoRoot = process.cwd();
+          const problemsDir = path.join(repoRoot, 'Problems');
+          const readmePath = path.join(repoRoot, 'README.md');
+
+          const appendSummary = (line = '') => {
+            fs.appendFileSync(summaryFile, `${line}\n`);
+          };
+
+          const errors = [];
+
+          const problemFolders = fs
+            .readdirSync(problemsDir, { withFileTypes: true })
+            .filter((entry) => entry.isDirectory())
+            .map((entry) => entry.name)
+            .sort((a, b) => a.localeCompare(b));
+
+          const implementedCount = problemFolders.length;
+          const readme = fs.readFileSync(readmePath, 'utf8');
+
+          const solvedMatch = readme.match(/Solved:\s*\*\*(\d+)\s+problems\*\*/i);
+          const easyMatch = readme.match(/🟢\s*Easy:\s*(\d+)/i);
+          const mediumMatch = readme.match(/🟠\s*Medium:\s*(\d+)/i);
+          const hardMatch = readme.match(/🔴\s*Hard:\s*(\d+)/i);
+
+          const solvedCount = solvedMatch ? Number.parseInt(solvedMatch[1], 10) : Number.NaN;
+          const easyCount = easyMatch ? Number.parseInt(easyMatch[1], 10) : Number.NaN;
+          const mediumCount = mediumMatch ? Number.parseInt(mediumMatch[1], 10) : Number.NaN;
+          const hardCount = hardMatch ? Number.parseInt(hardMatch[1], 10) : Number.NaN;
+
+          if (!Number.isFinite(solvedCount)) {
+            errors.push('Could not parse "Solved: **X problems**" in `README.md`.');
+          }
+
+          if (![easyCount, mediumCount, hardCount].every(Number.isFinite)) {
+            errors.push('Could not parse difficulty counts for Easy/Medium/Hard in `README.md`.');
+          }
+
+          if (Number.isFinite(solvedCount) && solvedCount !== implementedCount) {
+            errors.push(
+              `Mismatch between implemented problem folders (${implementedCount}) and "Solved" count (${solvedCount}).`,
+            );
+          }
+
+          if ([easyCount, mediumCount, hardCount].every(Number.isFinite) && Number.isFinite(solvedCount)) {
+            const difficultySum = easyCount + mediumCount + hardCount;
+
+            if (difficultySum !== solvedCount) {
+              errors.push(
+                `Mismatch in difficulty sum: Easy + Medium + Hard = ${difficultySum}, but "Solved" is ${solvedCount}.`,
+              );
+            }
+          }
+
+          const tablePathMatches = [...readme.matchAll(/\.\/Problems\/([^/]+)\/README\.md/g)].map(
+            (match) => match[1],
+          );
+          const tableFolderSet = new Set(tablePathMatches);
+
+          const missingInTable = problemFolders.filter((folder) => !tableFolderSet.has(folder));
+          const extraInTable = [...tableFolderSet].filter((folder) => !problemFolders.includes(folder));
+
+          if (missingInTable.length > 0) {
+            errors.push(`Problems missing in README table: ${missingInTable.join(', ')}.`);
+          }
+
+          if (extraInTable.length > 0) {
+            errors.push(`README table references non-existing problem folders: ${extraInTable.join(', ')}.`);
+          }
+
+          appendSummary('## 📚 README Consistency Checks');
+          appendSummary('');
+          appendSummary(`- Implemented problem folders: **${implementedCount}**`);
+          appendSummary(
+            `- README solved count: **${Number.isFinite(solvedCount) ? solvedCount : 'unreadable'}**`,
+          );
+          appendSummary(
+            `- README difficulty counts: 🟢 ${Number.isFinite(easyCount) ? easyCount : 'unreadable'}, 🟠 ${Number.isFinite(mediumCount) ? mediumCount : 'unreadable'}, 🔴 ${Number.isFinite(hardCount) ? hardCount : 'unreadable'}`,
+          );
+          appendSummary(`- README table entries: **${tableFolderSet.size}**`);
+          appendSummary('');
+
+          if (errors.length > 0) {
+            appendSummary('> [!CAUTION]');
+            appendSummary('> ❌ README consistency checks failed:');
+            appendSummary('');
+            for (const error of errors) {
+              appendSummary(`- ${error}`);
+            }
+
+            process.exit(1);
+          }
+
+          appendSummary('> [!NOTE]');
+          appendSummary('> ✅ README consistency checks passed.');
+          EOF
+
       - name: Test problems solutions
         run: npm run test:ci
 
