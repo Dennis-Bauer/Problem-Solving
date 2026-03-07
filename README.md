@@ -22,9 +22,9 @@ Solved: **20 problems**
 | [Valid Hex Code](./Problems/Valid-Hex-Code/README.md)                                   | 🟢 Easy    |
 | [Quadratisch Praktisch Grün](./Problems/Quadratisch-Praktisch-Grün/README.md)           | 🔴 Hard    |
 | [Texthopsen](./Problems/Texthopsen/README.md)                                           | 🟠 Medium  |
-| [Excel Sheet Column Title](./Problems/ExcelSheetColumnTitle/README.md)                  | 🟢 Easy    |
+| [Excel Sheet Column Title](./Problems/Excel-Sheet-Column-Title/README.md)               | 🟢 Easy    |
 | [Evaluating Simple Algebra](./Problems/Evaluating-Simple-Algebra/README.md)             | 🟢 Easy    |
-| [Trace The Path Of The Word](./Problems/Trace-Path-Of-World/README.md)                  | 🟢 Easy    |
+| [Trace The Path Of The Word](./Problems/Trace-Path-Of-Word/README.md)                   | 🟢 Easy    |
 | [Sil-ben-tren-nung](./Problems/Sil-ben-tren-nung/README.md)                             | 🟠 Medium  |
 | [Bällebad](./Problems/Bällebad/README.md)                                               | 🟢 Easy    |
 | [Keyword Cipher](./Problems/Keyword-Cipher/README.md)                                   | 🟢 Easy    |
