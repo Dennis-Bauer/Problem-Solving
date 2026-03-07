@@ -8,9 +8,9 @@ This repository is about solving coding-problems. It contains famous (or not tha
 
 ## Problems
 
-Solved: **19 problems**
+Solved: **20 problems**
 
-🟢 Easy: 12  
+🟢 Easy: 14  
 🟠 Medium: 5  
 🔴 Hard: 1
 
