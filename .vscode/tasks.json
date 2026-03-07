@@ -5,7 +5,7 @@
 			"id": "name",
 			"type": "promptString",
 			"description": "New problem name",
-			"default": "NEW_PROBLEM_X"
+			"default": "New-Prbolem-Name"
 		}
 	],
 	"tasks": [
