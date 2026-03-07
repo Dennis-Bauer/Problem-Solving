@@ -8,9 +8,9 @@ This repository is about solving coding-problems. It contains famous (or not tha
 
 ## Problems
 
-Solved: **20 problems**
+Solved: **21 problems**
 
-🟢 Easy: 14  
+🟢 Easy: 15  
 🟠 Medium: 5  
 🔴 Hard: 1
 
@@ -36,6 +36,7 @@ Solved: **20 problems**
 | [Shortest Path Dijkstra](./Problems/Shortes-Path-Dijkstra/README.md)                    | 🟠 Medium  |
 | [Sleep Time](./Problems/Sleep-Time/README.md)                                           | 🟢 Easy    |
 | [Reach Exit](./Problems/Reach-Exit/README.md)                                           | 🟢 Easy    |
+| [One Two Skip a Few](./Problems/One-Two-Skip-A-Few/README.md)                           | 🟢 Easy    |
 
 <!-- PROBLEMS_END -->
 

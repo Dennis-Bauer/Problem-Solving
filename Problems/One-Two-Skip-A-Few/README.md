@@ -23,13 +23,17 @@ Output:
 
 ### Solution Idea
 
-The Idea to solve this problem
+This problem can be solved with a simple mathematical observation.
 
----
+If `x` is the starting number (`l[0]`) and `y` is the final number (`l[n - 1]`), then there are always `y - x + 1` total numbers when counting from `x` to `y`.
+
+Since the list already contains `n` of those numbers, the number of missing numbers is:
+
+`(y - x + 1) - n`
 
 ### [Implementation](./solver.ts)
 
-The implementation for solving this problem
+(I don't need to explain that 🙃)
 
 ---
 
