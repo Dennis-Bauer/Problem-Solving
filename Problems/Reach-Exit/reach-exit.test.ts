@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import canReachExit from "./solver";
 
 describe("The Maze can be exit", () => {
-	const mazeOne = ["@..", ".#E", "..."];
+	const mazeOne = [".@.", ".#E", "..."];
 
 	it("should return true for the first maze", () => {
 		expect(canReachExit(mazeOne)).toEqual(true);
