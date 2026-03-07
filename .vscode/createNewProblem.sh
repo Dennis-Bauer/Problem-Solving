@@ -31,7 +31,7 @@ cp -R "$SRC_DIR" "$DEST_DIR"
 # --- rename files inside the copied folder ---
 # 1) Rename a specific file
 if [[ -f "$DEST_DIR/template.test.ts" ]]; then
-  mv "$DEST_DIR/template.test.ts" "$DEST_DIR/${NAME}.test.ts"
+  mv "$DEST_DIR/template.test.ts" "$DEST_DIR/${NAME,,}.test.ts"
 fi
 
 
