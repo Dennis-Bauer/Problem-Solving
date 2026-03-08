@@ -25,4 +25,30 @@ describe("Returns the correct day number of the year", () => {
 	it("should return 365 for 12/31/2019", () => {
 		expect(dayOfYear("12/31/2019")).toEqual(365);
 	});
+
+	it("should return 2 for 1/2/2019", () => {
+		expect(dayOfYear("1/2/2019")).toEqual(2);
+	});
+});
+
+describe("Catches a wrong date formate", () => {
+	it("should throw a error for 14/13/2020", () => {
+		expect(() => dayOfYear("14/13/2020")).toThrowError("The Month 14 isn't a valid Month!");
+	});
+
+	it("should throw a error for 11/31/2020", () => {
+		expect(() => dayOfYear("11/31/2020")).toThrowError("The 11 has only 30 days!");
+	});
+
+	it("should throw a error for 1/40/2020", () => {
+		expect(() => dayOfYear("1/40/2020")).toThrowError("The day 40 does not exist in any Month!");
+	});
+
+	it("should throw a error for 2/29/2019", () => {
+		expect(() => dayOfYear("2/29/2019")).toThrowError("February has only 28 days (No Leap)");
+	});
+
+	it("should throw a error for 2/30/2020", () => {
+		expect(() => dayOfYear("2/30/2020")).toThrowError("February has only 29 days");
+	});
 });
