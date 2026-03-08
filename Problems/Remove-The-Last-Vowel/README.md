@@ -1,6 +1,13 @@
 # Remove-The-Last-Vowel
 
-Write a function that removes the last vowel in each word in a sentence.
+Write a function that removes the last vowel from each word in a sentence.
+
+A vowel is one of: `a, e, i, o, u` (case-insensitive).
+
+Each word in the sentence should be processed independently, and only the **last vowel** of each word should be removed.
+
+Extra challenge (TypeScript/JavaScript):
+Try to implement the solution as a **one-liner**, meaning the function should contain only a `return` statement using method chaining.
 
 ## Documentation
 
