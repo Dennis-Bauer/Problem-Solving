@@ -8,9 +8,9 @@ This repository is about solving coding-problems. It contains famous (or not tha
 
 ## Problems
 
-Solved: **21 problems**
+Solved: **22 problems**
 
-🟢 Easy: 15  
+🟢 Easy: 16  
 🟠 Medium: 5  
 🔴 Hard: 1
 
@@ -37,6 +37,7 @@ Solved: **21 problems**
 | [Sleep Time](./Problems/Sleep-Time/README.md)                                           | 🟢 Easy    |
 | [Reach Exit](./Problems/Reach-Exit/README.md)                                           | 🟢 Easy    |
 | [One Two Skip a Few](./Problems/One-Two-Skip-A-Few/README.md)                           | 🟢 Easy    |
+| [Day number of year](./Problems/Day-Number-Of-Year/README.md)                           | 🟢 Easy    |
 
 <!-- PROBLEMS_END -->
 
