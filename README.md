@@ -8,9 +8,9 @@ This repository is about solving coding-problems. It contains famous (or not tha
 
 ## Problems
 
-Solved: **24 problems**
+Solved: **25 problems**
 
-🟢 Easy: 18  
+🟢 Easy: 19  
 🟠 Medium: 5  
 🔴 Hard: 1
 
@@ -40,6 +40,7 @@ Solved: **24 problems**
 | [Day number of year](./Problems/Day-Number-Of-Year/README.md)                           | 🟢 Easy    |
 | [Remove the last vowel](./Problems/Remove-The-Last-Vowel/README.md)                     | 🟢 Easy    |
 | [Bingo Check](./Problems/Bingo-Check/README.md)                                         | 🟢 Easy    |
+| [Missing Number](./Problems/Missing-Number/README.md)                                   | 🟢 Easy    |
 
 <!-- PROBLEMS_END -->
 
