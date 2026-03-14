@@ -64,4 +64,16 @@ describe("Validates correctly if a Bingo-Card has a bingo on it or not", () => {
 	it("should return false for a wrong vertical bingo", () => {
 		expect(bingoCheck(fifthCard)).toEqual(false);
 	});
+
+	const sixthCard: CardType = [
+		[21, 59, 24, 30, "x"],
+		[67, 98, 39, "x", 44],
+		[37, 65, "x", 83, 54],
+		[64, "x", 47, 32, 90],
+		["x", 43, 31, 74, 87],
+	];
+
+	it("should return true for the other diagonal bingo", () => {
+		expect(bingoCheck(sixthCard)).toEqual(true);
+	});
 });

@@ -10,13 +10,30 @@ A board has a bingo, when a horizontal, vertical or diagonal 5 `x` line exists.
 
 ### Solution Idea
 
-The Idea to solve this problem
+The board is represented as a 2D array (an array containing other arrays).
+
+First, we check whether any inner array is completely filled with `"x"`.  
+If such an array exists, it means there is a horizontal line and we return `true`.
+
+If not, we check for vertical lines.  
+For each possible index (0 → 4), we check the same index in every inner array.  
+If all arrays contain `"x"` at that index, we have a vertical line and return `true`.
+
+Finally, we check the two diagonals:
+
+- positions `[i, i]`
+- positions `[i, 4 - i]`
+
+For each index `i`, we verify whether all elements on one of these diagonals are `"x"`.  
+If either diagonal contains only `"x"`, we return `true`.
+
+If none of these checks succeed, no winning line exists and the function returns `false`.
 
 ---
 
 ### [Implementation](./solver.ts)
 
-The implementation for solving this problem
+It`s really simple. There are just 3 different for-loops. I don't think there is a description necessary :)
 
 ---
 
