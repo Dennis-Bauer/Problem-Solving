@@ -11,13 +11,13 @@ Create a function that takes an array of numbers between 1 and 10 (excluding one
 
 ### Solution Idea
 
-The Idea to solve this problem
+Sum all numbers in the array together and subtract this number from 55 (The sum from 1 to 10).
 
 ---
 
 ### [Implementation](./solver.ts)
 
-The implementation for solving this problem
+Doing exactly this what the solution idea says.
 
 ---
 
