@@ -7,7 +7,7 @@ describe("Determines the correct count of sevens in the array", () => {
 	});
 
 	it("should return 'there is no 7 in the array' for the second array", () => {
-		expect(sevenBoom([8, 6, 33, 100])).toEqual("there is not 7 in the array");
+		expect(sevenBoom([8, 6, 33, 100])).toEqual("there is no 7 in the array");
 	});
 
 	it("should return one 'Boom' for the third array", () => {
