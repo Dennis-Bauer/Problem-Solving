@@ -6,9 +6,9 @@ This repository is about solving coding-problems. It contains famous (or not tha
 
 ## Problems
 
-Solved: **26 problems**
+Solved: **27 problems**
 
-🟢 Easy: 20  
+🟢 Easy: 21  
 🟠 Medium: 5  
 🔴 Hard: 1
 
@@ -39,6 +39,7 @@ Solved: **26 problems**
 | [Remove the last vowel](./Problems/Remove-The-Last-Vowel/README.md)                     | 🟢 Easy    |
 | [Bingo Check](./Problems/Bingo-Check/README.md)                                         | 🟢 Easy    |
 | [Missing Number](./Problems/Missing-Number/README.md)                                   | 🟢 Easy    |
+| [Seven Boom!](./Problems/Seven-Boom/README.md)                                          | 🟢 Easy    |
 | [Vertical List](./Problems/Vertical-List/README.md)                                     | 🟢 Easy    |
 
 <!-- PROBLEMS_END -->
