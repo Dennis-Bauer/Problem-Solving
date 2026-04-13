@@ -6,9 +6,9 @@ This repository is about solving coding-problems. It contains famous (or not tha
 
 ## Problems
 
-Solved: **27 problems**
+Solved: **28 problems**
 
-🟢 Easy: 21  
+🟢 Easy: 22  
 🟠 Medium: 5  
 🔴 Hard: 1
 
@@ -41,6 +41,7 @@ Solved: **27 problems**
 | [Missing Number](./Problems/Missing-Number/README.md)                                   | 🟢 Easy    |
 | [Seven Boom!](./Problems/Seven-Boom/README.md)                                          | 🟢 Easy    |
 | [Vertical List](./Problems/Vertical-List/README.md)                                     | 🟢 Easy    |
+| [Daily Temperatures](./Problems/Daily-Temperatures/README.md)                           | 🟢 Easy    |
 
 <!-- PROBLEMS_END -->
 

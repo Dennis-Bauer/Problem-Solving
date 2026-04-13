@@ -22,9 +22,11 @@ If it does not exist, we know that the previous word was shorter, so we insert a
 
 By doing this for every word and every character, the solution array is built correctly and the final transformed text can be returned.
 
+(Sorry for only one text. But don't want to write two :|)
+
 ---
 
 ### Information's
 
 This problem comes from the newsletter [Sloth Bytes](https://slothbytes.beehiiv.com).
-[Post](https://slothbytes.beehiiv.com/p/why-your-delete-button-is-a-lie) from May 18, 2026.
+[Post](https://slothbytes.beehiiv.com/p/why-your-delete-button-is-a-lie) from March 18, 2026.
