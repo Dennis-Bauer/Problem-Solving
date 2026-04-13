@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import verticalTxt from "./solver";
 
-describe("Description for the tests", () => {
+describe("Returns the same Text written from up to down", () => {
 	it("should return a 2x7 Matrix for 'Holy bananas'", () => {
 		expect(verticalTxt("Holy bananas")).toEqual([
 			["H", "b"],

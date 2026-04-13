@@ -27,4 +27,4 @@ By doing this for every word and every character, the solution array is built co
 ### Information's
 
 This problem comes from the newsletter [Sloth Bytes](https://slothbytes.beehiiv.com).
-[Post](https://slothbytes.beehiiv.com/p/why-your-delete-button-is-a-lie) from May 18, 2026.
+[Post](https://slothbytes.beehiiv.com/p/why-your-delete-button-is-a-lie) from March 18, 2026.
