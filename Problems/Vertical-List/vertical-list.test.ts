@@ -15,7 +15,7 @@ describe("Description for the tests", () => {
 	});
 
 	it("should return a 2x6 Matrix for 'Hello fellas'", () => {
-		expect(verticalTxt("Holy bananas")).toEqual([
+		expect(verticalTxt("Hello fellas")).toEqual([
 			["H", "f"],
 			["e", "e"],
 			["l", "l"],
@@ -26,7 +26,7 @@ describe("Description for the tests", () => {
 	});
 
 	it("should return a 4x6 Matrix for 'Hello fellas I'm Dennis'", () => {
-		expect(verticalTxt("Holy bananas")).toEqual([
+		expect(verticalTxt("Hello fellas I'm Dennis")).toEqual([
 			["H", "f", "I", "D"],
 			["e", "e", "'", "e"],
 			["l", "l", "m", "n"],
