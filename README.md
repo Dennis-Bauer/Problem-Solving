@@ -2,15 +2,13 @@
 
 This repository is about solving coding-problems. It contains famous (or not that famous) problems with my solution (Dennis Bauer). I ranked the problems as 🟢 Easy, 🟠 Medium and 🔴 Hard. These ranks reflect the time I invested in the problem and how difficult it felt to me.
 
-# Problem-list
-
 <!-- PROBLEMS_START -->
 
 ## Problems
 
-Solved: **25 problems**
+Solved: **26 problems**
 
-🟢 Easy: 19  
+🟢 Easy: 20  
 🟠 Medium: 5  
 🔴 Hard: 1
 
@@ -41,10 +39,11 @@ Solved: **25 problems**
 | [Remove the last vowel](./Problems/Remove-The-Last-Vowel/README.md)                     | 🟢 Easy    |
 | [Bingo Check](./Problems/Bingo-Check/README.md)                                         | 🟢 Easy    |
 | [Missing Number](./Problems/Missing-Number/README.md)                                   | 🟢 Easy    |
+| [Vertical List](./Problems/Vertical-List/README.md)                                     | 🟢 Easy    |
 
 <!-- PROBLEMS_END -->
 
-## npm-Version:
+## npm-Version
 
 The version indicates how much problems are implemented (cp -> Coding Problem)
 

@@ -4,15 +4,23 @@ Create a function that converts a string into a matrix of characters that can be
 
 ## Documentation
 
-### Solution Idea
+### Solution Idea & [Implementation](./solver.ts)
 
-The Idea to solve this problem
+The idea is to loop over every word in the text and process each character separately.
 
----
+For every character, we first check whether an array already exists in the solution array at the index of the character's position in the word.  
+If not, we create a new array there.
 
-### [Implementation](./solver.ts)
+Then we place the character into the solution array at this position:
 
-The implementation for solving this problem
+\[character position\]\[word index\]
+
+This correctly rearranges the characters, but the spaces for shorter words are still missing.
+
+To fix this, whenever the word index is greater than `0`, we check whether the previous character position exists for the previous word.  
+If it does not exist, we know that the previous word was shorter, so we insert an empty space at that position.
+
+By doing this for every word and every character, the solution array is built correctly and the final transformed text can be returned.
 
 ---
 
