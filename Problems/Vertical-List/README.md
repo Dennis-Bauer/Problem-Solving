@@ -22,6 +22,8 @@ If it does not exist, we know that the previous word was shorter, so we insert a
 
 By doing this for every word and every character, the solution array is built correctly and the final transformed text can be returned.
 
+(Sorry for only one text. But don't want to write two :|)
+
 ---
 
 ### Information's
