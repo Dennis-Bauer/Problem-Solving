@@ -1,4 +1,6 @@
-export default function keyword_cipher(keyword: string, word: string): string {
+import type NonEmptyString from "../../utilities/types/nonEmptyString";
+
+export default function keywordCipher<T extends string>(keyword: NonEmptyString<T>, word: string): string {
 	// biome-ignore format: the array should not be formatted
 	const alphabetA = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 	// biome-ignore format: the array should not be formatted
@@ -6,7 +8,7 @@ export default function keyword_cipher(keyword: string, word: string): string {
 
 	if (word.length <= 0) throw new Error("An empty word cannot be encrypted");
 
-	let extraAlphabet = keyword;
+	let extraAlphabet: NonEmptyString<T> | string = keyword;
 
 	extraAlphabet.split("").forEach((e) => {
 		if (alphabetA.some((value) => value === e)) alphabetA.splice(alphabetA.indexOf(e), 1);

@@ -42,9 +42,3 @@ describe("Returns the correct remaining numbers", () => {
 		expect(nom_nom([2])).toEqual([2]);
 	});
 });
-
-// describe("Another description for the tests. Maybe those which are throwing errors", () => {
-// 	it("should return something for this input", () => {
-// 		expect(true).toEqual(true);
-// 	});
-// });

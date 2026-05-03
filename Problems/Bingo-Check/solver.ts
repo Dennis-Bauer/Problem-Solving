@@ -1,4 +1,4 @@
-import type { FixedArray } from "../../utilities/types/fixedArray";
+import type FixedArray from "../../utilities/types/fixedArray";
 
 export default function bingoCheck(card: FixedArray<FixedArray<"x" | number, 5>, 5>): boolean {
 	if (

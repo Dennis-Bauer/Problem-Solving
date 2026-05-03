@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { FixedArray } from "../../utilities/types/fixedArray";
+import type FixedArray from "../../utilities/types/fixedArray";
 import bingoCheck from "./solver";
 
 type CardType = FixedArray<FixedArray<"x" | number, 5>, 5>;
