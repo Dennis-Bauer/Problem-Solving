@@ -1,9 +1,11 @@
+import type NonEmptyArray from "../../utilities/types/nonEmptyArray";
+
 interface Ticket {
 	start: string;
 	end: string;
 }
 
-export default function findPath(tickets: Ticket[]): string[] {
+export default function findPath(tickets: NonEmptyArray<Ticket>): string[] {
 	if (tickets.length <= 0) throw new Error("It's not possible to find a path when no tickets are given!");
 
 	const path = findTicketPath("A", tickets, ["A"]);
