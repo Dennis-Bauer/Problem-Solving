@@ -37,10 +37,7 @@ jobs:
             exit 0
           fi
 
-          jq --arg v "$NEW_VERSION" '.version=$v' package.json > package.json.tmp
-          mv package.json.tmp package.json
-
-          npm i --package-lock-only
+          npm version $NEW_VERSION --no-git-tag-version --ignore-scripts
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
