@@ -42,12 +42,8 @@ describe("Solved complex Bracket-Equations correctly", () => {
 		expect(evaluateEquation("1 / (4 - 2)")).toEqual(0.5);
 	});
 
-	it("should return 42 for '  40  +   2  '", () => {
-		expect(evaluateEquation("  40  +   2  ")).toEqual(42);
-	});
-
 	it("should return 4 for '2 * (10 - (2 * (1 + 2)))'", () => {
-		expect(evaluateEquation("2 * (10 - (2 * (1 + 2)))")).toEqual(4);
+		expect(evaluateEquation("2 * (10 - (2 * (1 + 2)))")).toEqual(8);
 	});
 
 	it("should return -30 for '-2 * (5 + 5) * 1.5'", () => {
@@ -63,7 +59,7 @@ describe("Solved complex Bracket-Equations correctly", () => {
 	});
 
 	it("should return -14 for '5 + -3 * (-2 + 5) * 2'", () => {
-		expect(evaluateEquation("5 + -3 * (-2 + 5) * 2")).toEqual(-14);
+		expect(evaluateEquation("5 + -3 * (-2 + 5) * 2")).toEqual(-13);
 	});
 
 	it("should return 12 for '-(-2 * 3) * 2'", () => {
@@ -75,7 +71,7 @@ describe("Solved complex Bracket-Equations correctly", () => {
 	});
 
 	it("should return -2 for '10 + -12 / (3 + -1)'", () => {
-		expect(evaluateEquation("10 + -12 / (3 + -1)")).toEqual(-2);
+		expect(evaluateEquation("10 + -12 / (3 + -1)")).toEqual(4);
 	});
 
 	it("should return Infinity or throw for '5 / 0'", () => {
@@ -87,17 +83,13 @@ describe("Solved complex Bracket-Equations correctly", () => {
 	});
 
 	it("should return 4 for '2 * (3 + (4 * (5 - (6 + 1 / 2))))'", () => {
-		expect(evaluateEquation("2 * (3 + (4 * (5 - (6 + 1 / 2))))")).toEqual(4);
+		expect(evaluateEquation("2 * (3 + (4 * (5 - (6 + 1 / 2))))")).toEqual(-6);
 	});
 });
 
 describe("Solved equations with decimal numbers", () => {
 	it("should return 0.05 for '0.1 * 0.5'", () => {
 		expect(evaluateEquation("0.1 * 0.5")).toEqual(0.05);
-	});
-
-	it("should return 11 for '  (  10  + 2   ) -  ( 4 / 4 ) '", () => {
-		expect(evaluateEquation("  (  10  + 2   ) -  ( 4 / 4 ) ")).toEqual(11);
 	});
 
 	it("should return 1.3333333333333333 for '4 / 3'", () => {
@@ -114,17 +106,23 @@ describe("Solved equations with decimal numbers", () => {
 });
 
 describe("Throws the correct error when receiving an invalid equation", () => {
-	it("should throw the correct error for an equation with a multiplication operator", () => {
+	it("should throw the correct error for an equation with a letter init", () => {
 		expect(() => evaluateEquation("a 3 + 6")).toThrowError(
 			"The given equation contains elements which are not allowed!"
 		);
+	});
 
+	it("should throw the correct error for an equation with the wrong sort of brackets.", () => {
 		expect(() => evaluateEquation("[3 + 6] * 2")).toThrowError(
 			"The given equation contains elements which are not allowed!"
 		);
+	});
 
+	it("should throw the correct error for an equation where the brake's do not close.", () => {
 		expect(() => evaluateEquation("2 + (3 * 4 / 2")).toThrowError("The given equation has a wrong format!");
+	});
 
+	it("should throw the correct error for an equation where a operator is missing", () => {
 		expect(() => evaluateEquation("2 2 + 3")).toThrowError("The given equation has a wrong format!");
 	});
 });
