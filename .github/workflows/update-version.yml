@@ -37,7 +37,7 @@ jobs:
             exit 0
           fi
 
-          npm version $NEW_VERSION --no-git-tag-version --ignore-scripts
+          npm --ignore-scripts version $NEW_VERSION --no-git-tag-version
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
