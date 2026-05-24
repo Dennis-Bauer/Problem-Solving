@@ -1,14 +1,6 @@
 import { describe, expect, it } from "vitest";
 import evaluateEquation from "./solver";
 
-/*
-
-
-
-
-
-*/
-
 describe("Tests given by 'Coding Trainer'", () => {
 	it("should return 23 for '2 + 3 * 7'", () => {
 		expect(evaluateEquation("2 + 3 * 7")).toEqual(23);
@@ -44,6 +36,10 @@ describe("Tests given by 'Coding Trainer'", () => {
 });
 
 describe("Solves basics Equation correctly", () => {
+	it("should return 0 for ''", () => {
+		expect(evaluateEquation("")).toEqual(0);
+	});
+
 	it("should return 7 for '3 + 4'", () => {
 		expect(evaluateEquation("3 + 4")).toEqual(7);
 	});
