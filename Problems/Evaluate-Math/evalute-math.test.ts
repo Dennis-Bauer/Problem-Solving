@@ -1,9 +1,45 @@
 import { describe, expect, it } from "vitest";
 import evaluateEquation from "./solver";
 
+/*
+
+
+
+
+
+*/
+
 describe("Tests given by 'Coding Trainer'", () => {
-	it("should return something for this input", () => {
-		expect(true).toEqual(true);
+	it("should return 23 for '2 + 3 * 7'", () => {
+		expect(evaluateEquation("2 + 3 * 7")).toEqual(23);
+	});
+
+	it("should return 35 for '(2 + 3) * 7'", () => {
+		expect(evaluateEquation("(2 + 3) * 7")).toEqual(35);
+	});
+
+	it("should return 4 for '2 + 2'", () => {
+		expect(evaluateEquation("2 + 2")).toEqual(4);
+	});
+
+	it("should return 9 for '1 * 8 + 3 / 3'", () => {
+		expect(evaluateEquation("1 * 8 + 3 / 3")).toEqual(9);
+	});
+
+	it("should return 3 for '8 / 2 - 1 + 8 * 0'", () => {
+		expect(evaluateEquation("8 / 2 - 1 + 8 * 0")).toEqual(3);
+	});
+
+	it("should return 60 for '(1 + 2 + 3 + 4 + 5) * 4'", () => {
+		expect(evaluateEquation("(1 + 2 + 3 + 4 + 5) * 4")).toEqual(60);
+	});
+
+	it("should return 2 for '(1 + 2 + 3 + 4 + 5) / 15 * 2'", () => {
+		expect(evaluateEquation("(1 + 2 + 3 + 4 + 5) / 15 * 2")).toEqual(2);
+	});
+
+	it("should return 92 for '2 + 3 * (1 + 2 + 3 + 4 + 5) * 2'", () => {
+		expect(evaluateEquation("2 + 3 * (1 + 2 + 3 + 4 + 5) * 2")).toEqual(92);
 	});
 });
 

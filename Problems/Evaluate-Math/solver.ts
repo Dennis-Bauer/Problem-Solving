@@ -20,21 +20,21 @@ export default function evaluateEquation(equation: string): number {
 		if (!/\)/.test(equation)) throw new Error(WrongFormatError);
 
 		const firstIndex = equation.indexOf("(");
-		const lastIndex = findCloseBracketIndex(equation, firstIndex);
+		const lastIndex = findCloseBracketIndex(firstIndex);
 
 		if (lastIndex < firstIndex || lastIndex < 0) throw new Error(WrongFormatError);
 
 		equation = `${equation.substring(0, firstIndex)}${evaluateEquation(equation.substring(firstIndex + 1, lastIndex))}${lastIndex === equation.length - 1 ? "" : equation.substring(lastIndex + 1)}`;
 	}
 
-	// Multiplikation
-	while (/\*/.test(equation)) {
-		equation = calculateFirstSubEquationFromOperator(equation, "*");
-	}
-
 	// Division
 	while (/\//.test(equation)) {
-		equation = calculateFirstSubEquationFromOperator(equation, "/");
+		equation = calculateFirstSubEquationFromOperator("/");
+	}
+
+	// Multiplikation
+	while (/\*/.test(equation)) {
+		equation = calculateFirstSubEquationFromOperator("*");
 	}
 
 	// Subtraktion
@@ -49,12 +49,12 @@ export default function evaluateEquation(equation: string): number {
 
 		if (equation[pos + 1] !== " ") break;
 
-		equation = calculateFirstSubEquationFromOperator(equation, "-", pos);
+		equation = calculateFirstSubEquationFromOperator("-", pos);
 	}
 
 	// Addition
 	while (/\+/.test(equation)) {
-		equation = calculateFirstSubEquationFromOperator(equation, "+");
+		equation = calculateFirstSubEquationFromOperator("+");
 	}
 
 	const solution = Number(equation);
@@ -62,66 +62,67 @@ export default function evaluateEquation(equation: string): number {
 	if (Number.isNaN(solution)) throw new Error(WrongFormatError);
 
 	return solution;
-}
 
-function calculateFirstSubEquationFromOperator(equation: string, operation: "*" | "+" | "/" | "-", index = -1) {
-	const operatorPos = index === -1 ? equation.indexOf(operation) : index;
-	const { first, last } = getOperationIndices(equation, operatorPos);
+	// Helper Functions
+	function calculateFirstSubEquationFromOperator(operation: "*" | "+" | "/" | "-", index = -1) {
+		const operatorPos = index === -1 ? equation.indexOf(operation) : index;
+		const { first, last } = getOperationIndices(operatorPos);
 
-	return `${equation.substring(0, first)}${calculateSingle(equation.substring(first, last + 1))}${equation.substring(last + 1)}`;
-}
-
-function calculateSingle(calculation: string): number {
-	const calc = calculation.trim();
-
-	const [strA, operator, strB] = calc.split(" ");
-
-	const a = Number(strA);
-	const b = Number(strB);
-
-	switch (operator) {
-		case "*":
-			return a * b;
-		case "/":
-			return a / b;
-		case "+":
-			return a + b;
-		case "-":
-			return a - b;
-		default:
-			throw new Error("Unsupported operator!");
+		return `${equation.substring(0, first)}${calculateSingle(equation.substring(first, last + 1))}${equation.substring(last + 1)}`;
 	}
-}
 
-function getOperationIndices(equation: string, operatorPos: number): { first: number; last: number } {
-	const result = { first: -1, last: -1 };
+	function calculateSingle(calculation: string): number {
+		const calc = calculation.trim();
 
-	for (let i = operatorPos - 2; i >= 0; i--) {
-		if (equation[i] === " " || i === 0) {
-			result.first = i === 0 ? 0 : i + 1;
-			break;
+		const [strA, operator, strB] = calc.split(" ");
+
+		const a = Number(strA);
+		const b = Number(strB);
+
+		switch (operator) {
+			case "*":
+				return a * b;
+			case "/":
+				return a / b;
+			case "+":
+				return a + b;
+			case "-":
+				return a - b;
+			default:
+				throw new Error("Unsupported operator!");
 		}
 	}
 
-	for (let i = operatorPos + 2; i < equation.length; i++) {
-		if (equation[i] === " " || i === equation.length - 1) {
-			result.last = i === equation.length - 1 ? equation.length - 1 : i - 1;
-			break;
+	function getOperationIndices(operatorPos: number): { first: number; last: number } {
+		const result = { first: -1, last: -1 };
+
+		for (let i = operatorPos - 2; i >= 0; i--) {
+			if (equation[i] === " " || i === 0) {
+				result.first = i === 0 ? 0 : i + 1;
+				break;
+			}
 		}
+
+		for (let i = operatorPos + 2; i < equation.length; i++) {
+			if (equation[i] === " " || i === equation.length - 1) {
+				result.last = i === equation.length - 1 ? equation.length - 1 : i - 1;
+				break;
+			}
+		}
+
+		return result;
 	}
 
-	return result;
-}
-
-function findCloseBracketIndex(equation: string, startIndex = 0) {
-	let count = 0;
-	for (let i = startIndex + 1; i < equation.length; i++) {
-		if (equation[i] === ")") {
-			if (count === 0) return i;
-			else count--;
-		} else if (equation[i] === "(") {
-			count++;
+	function findCloseBracketIndex(startIndex = 0) {
+		let count = 0;
+		for (let i = startIndex + 1; i < equation.length; i++) {
+			if (equation[i] === ")") {
+				if (count === 0) return i;
+				else count--;
+			} else if (equation[i] === "(") {
+				count++;
+			}
 		}
+		return -1;
 	}
-	return -1;
 }
