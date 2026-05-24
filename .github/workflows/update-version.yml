@@ -1,6 +1,7 @@
 name: Update Package Version
 
 on:
+  workflow_call:
   push:
     branches:
       - main
