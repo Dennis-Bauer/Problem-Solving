@@ -20,6 +20,9 @@ jobs:
         with:
           token: ${{ secrets.BOT_TOKEN }}
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+
       - name: Sync version to problem count
         run: |
           COUNT=$(find Problems -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')
